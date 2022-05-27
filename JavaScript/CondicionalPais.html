@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pais de Origem</title>
+    </head>
+    <body>
+        <h2>Vamos Descobrir Sua Nacionalidade !</h2><hr>
+        <div>
+            <label style="display: block; margin-bottom: 0.3rem;" for="inp-nacio"><strong>Digite Sua Nacionalidade</strong></label>
+            <input type="text" id="inp-nacio" placeholder="Digite Aqui: " style="margin-bottom: 0.3rem;">
+        </div>
+        <button id="btn">Verificar</button>
+        <p id="resposta"></p>
+    </body>
+    <script>
+        var bnt = document.querySelector('button#btn')
+        bnt.addEventListener('click', Verificar)
+
+        function Verificar()
+        {
+            var inpt = document.querySelector('input#inp-nacio')
+            var res = inpt.value
+            var p = document.querySelector('p#resposta')
+
+            if(res == 'brasileiro')
+            {
+                p.innerHTML = `Voce é <strong>BRASILEIRO</strong>`
+            }
+            else
+            {
+                p.innerHTML = `Voce é um <strong>GRINGO</strong> Safado.`
+            }
+        }
+    </script>
+</html>

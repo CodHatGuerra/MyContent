@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Sistemas de Multas</h1>
+    <h2>Digite A velocidade Do Seu Automovel.</h2>
+    <input type="number" name="" id="txtvel1" value="txtvel1">
+    <button id="btn">Verificar !</button>
+    <div id="res">Multa ?</div>
+    <script>
+        var btn = document.querySelector('button#btn')
+        btn.addEventListener('click', consultar)
+        
+        function consultar()
+        {
+            var inpt1 = document.querySelector('input#txtvel1')
+            var val1 = parseInt(inpt1.value)
+            var res = window.document.querySelector('div#res')
+            res.innerHTML = `Sua Velocidade Atual é De: <strong>${val1}Km/H</strong> `
+
+            if (val1 >= 60)
+            {
+                res.innerHTML += `Voce Excedeu o Limite Permitido e Foi Multado ! <p>Dirija Sempre Usando Cinto De Segurança !</p>`
+            }
+            else
+            {
+                res.innerHTML += `Velocidade Dentro Do Permitido, Motorista não Multado. <p>Dirija Sempre Usando Cinto De Segurança !</p>`
+            }
+        }
+    </script>
+</body>
+</html>
