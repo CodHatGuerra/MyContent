@@ -14,20 +14,22 @@
     <main>
         <div id="div1">
             <label for="datNasc">Digite Seu Ano de Nascimento:</label>
-            <input type="date" name="datNasc" id="data">
+            <input type="number" min="1900" max="2022" step="1" value="1990" name="datNasc" id="data">
         </div>
         <div id="div2">
             <p>Qual e seu Sexo: ?</p>
             <label for="rdSexoM">Masculino: </label>
-            <input type="radio" name="rdSexo" id="rdSexoM" value="true" checked>
+            <input type="radio" name="rdSexo" value="H" checked>
             <label for="rdSexoF">Feminino: </label>
-            <input type="radio" name="rdSexo" id="rdSexoF" value="false">
+            <input type="radio" name="rdSexo" value="M">
         </div>
         <div id="btn">
-            <button>Verificar</button>
+            <input type="button" value="Verificar" id="bttn" onclick="test21();">
         </div>
-        <h2>Clique Para Verificar Sua Idade !</h2>
+        <h2 id="msg">Clique Para Verificar Sua Idade !</h2>
+        <div id="dinamico"></div>
     </main>
     <script src="code.js"></script>
 </body>
 </html>
+

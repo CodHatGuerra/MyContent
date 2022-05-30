@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device, initial-scale=1.0">
+        <title>Tipos De Input</title>
+    </head>
+    <body>
+        <h1>Tipos de Input</h1>
+        <hr>
+        <form>
+            <p>
+                <label for="txtNomeCompleto">Nome Completo</label><br>
+                <input type="text" size="30" maxlength="20" required id="txtNomeCompleto" placeholder="Digite Seu Nome"><br>
+                
+                <label for="txtEmail">Email</label><br>
+                <input type="text" size="30" maxlength="20" required autofocus placeholder="Digite Seu Email"><br>
+            </p>
+            
+            <fieldset>
+                <legend>Profissão</legend>
+                <input type="radio" name="cargo" id="rdProgramador" value="Programador">
+                <label for="rdProgramador">Programador</label><br>
+                <input type="radio" name="cargo" id="rdWebDesigner" value="WebDesigner">
+                <label for="rdWebDesigner">WebDesigner</label>
+            </fieldset>
+            <p>
+                <input type="checkbox" name="Aceito" id="ckAceito" value="Aceito">
+                <label for="ckAceito">Aceito os Termos De Uso</label>
+            </p>
+            <p>
+                <label>ESTADO: </label><br>
+                <select name="Estado" id="slctEstado">
+                    <optgroup label="Norte">
+                        <option value="AM">AMAZONAS</option>
+                         <option value="RO">Rondonia</option>
+                  </optgroup>
+                  <optgroup label="Sudeste"></optgroup>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="SP">São Paulo</option>
+                </optgroup>
+                    <optgroup label="Nordeste"></optgroup>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceara</option>
+                </optgroup>
+                    <optgroup label="Sul"></optgroup>
+                    <option value="PR">Parana</option>
+                    <option value="SC">Santa Catarina</option>
+            </optgroup>
+                </select>
+                <p>
+                    <input type="datetime-local">
+                </p>
+            </p>
+            <p>
+                <input type="submit" value="Enviar">
+            </p>
+            <p>
+            </p>
+           
+        </form>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+#p1::after{
+    content: "*";
+}
+h1{
+    position: relative;
+    text-align: center;
+}
+h1::after{
+    content: "";
+    background-image: linear-gradient(120deg, #e5ea15, #00c4ff);
+    width: 90%;
+    height: 5px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%) skew(-50deg);
+}
+
+#p2::first-line{
+    background-color: #fcff47;
+    font-variant: small-caps ;
+}
+
+a[href^="http"]:after{
+    font-weight: bold;
+    display: block;
+    content: "PDF";
+}   

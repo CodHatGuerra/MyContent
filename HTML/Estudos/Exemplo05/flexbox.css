@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 400px;
+    justify-content: ;
+    align-items: center;
+    align-content: space-around;
+}
+
+div {
+   /* height: 120px;*/
+    width: 20%;
+    border: dotted 2px black;
+    font-size: 60px;
+    text-align: center;
+    line-height: 120px
+}
+
+#div3 {
+    
+}

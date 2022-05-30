@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+body {
+    margin: 1rem;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    height: calc(100vh - 2rem);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:  80px 2fr 1fr 80px;
+    grid-gap: .5rem;
+    padding: 5px;
+    grid-template-areas: 
+    "n n n n"
+    "a m m m"
+    "a c1 c2 c3"
+    "a f f f";
+}
+
+nav {
+    background-color: darkgray;
+    grid-area: n;
+}
+
+aside {
+    background-color: rgb(131, 114, 114);
+    grid-area: a
+}
+
+main {
+    background-color: rgb(221, 207, 207);
+    grid-area: m;
+}
+
+#article1 {
+    background-color: gray;
+    grid-area: c1;
+}
+
+#article2 {
+    background-color: rgb(174, 168, 168);
+    grid-area: c2;
+}
+
+#article3 {
+    background-color: gray;
+    grid-area: c3;
+}
+
+footer {
+    background-color: darkslategray;
+    grid-area: f;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 60px 2fr 1fr 1fr 1fr 60px;
+        grid-template-areas: 
+            "n"
+            "a"
+            "m"
+            "c1"
+            "c2"
+            "c3"
+            "f";
+    }
+}

@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    float: left;
+    margin: 0;
+    padding: 0 20px;
+    
+}
+
+#ul1 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+}
+
+#ul1 > li {
+    float: left;
+    
+}
+
+#ul1 > li > a {
+    color: white;
+    padding: 10px 10px;
+    display: inline-block;
+    text-decoration: none;
+    
+}
+
+main {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+
+main aside {
+    background-color: rgb(217, 230, 165);
+    width: 25vw;
+    height: calc(100vh - 40px);
+    float: left;
+}
+
+main article {
+    background-color: rgb(218, 152, 86);
+    height: calc(100vh - 40px);
+    width: 75vw;
+    float: left;
+    padding: 20px;
+    font-size: 20px;
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    
+}
+
+
+header a:hover {
+    background-color: blueviolet;
+}
+
+header a:active {
+    background-color: rgb(255, 163, 83);
+}
+
+#ul2 {
+    margin: 0;
+    padding: 0;
+}
+
+
+article p {
+    padding: 20px;
+}
+
+img {
+    margin-right: 10px;
+    height: 80px;
+    width: 80px;
+    float: left;
+}
+
+#ul2 {
+
+}
+
+#ul2 {
+    margin: 0;
+    padding: 0;
+}
+
+#ul2 li a {
+    color: rgb(255, 255, 255);
+    background-color: black;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    width: 90%;
+    left: auto;
+    box-shadow: 2px 2px 5px gray;
+}
+
+#ul2 li a:hover {
+    background-color: brown;
+}
+
+#ul2 li a:active {
+    background-color: rgb(255, 130, 42);
+}

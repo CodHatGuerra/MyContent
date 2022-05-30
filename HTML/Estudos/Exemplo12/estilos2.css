@@ -1,0 +1,107 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: stiyck;
+    background-size: contain;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.9;
+    z-index: -1;
+    background: url('papel.jpg');
+}
+
+.logotipo {
+    font-size: 2rem;
+    color: #6e8ce6;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    display: inline-block;
+    color: rgb(135, 135, 255);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    text-align: left;
+    color: #555;
+} 
+
+h2  {
+    font-size: 3.2rem;
+    color: rgb(62, 71,100);
+}
+
+h3 {
+    font-family: cursive;
+    font-size: 1.5rem;
+    color: #6e8ce6;
+}
+
+h1 {
+    font-size: 4rem;
+    text-align: center; 
+}
+
+h6 {
+    color: #6e8ce6;
+    font-size: .85rem;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p { 
+    font-size: 1rem;
+    line-height: 2rem;
+    color: rgb(150, 160, 192);
+    word-spacing: .15rem;
+
+}
+
+.btn-contorno {
+    border: solid 1px #ddd;
+    border-radius: 1.5rem;
+    display: flex;
+    color: #6e8ce6;
+    align-self: center;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    padding: .75rem 1.5rem;
+    transition: border-color 500ms;
+}
+
+.btn-contorno:hover {
+    border-color: #6e8ce6;
+    transition: 500ms;
+}
+
+.btn-solido {
+    border: none;
+    background-color: #6e8ce6;
+    border-radius: 1.8rem;
+    color: white;
+    padding: .85rem 1.5rem;
+    font-size: 1rem;
+    letter-spacing: .15rem;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 500ms;
+}
+
+.btn-solido:hover {
+    background-color: #354883;
+}

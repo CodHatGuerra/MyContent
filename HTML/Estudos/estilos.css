@@ -1,0 +1,20 @@
+body, a {
+    color:gray;
+}
+h1 {
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Courier New';
+}
+
+p {
+    text-align: justify;
+    font-family: "Sofia";
+
+
+}
+
+a:hover{
+    color:chartreuse;
+    cursor: pointer;
+}
