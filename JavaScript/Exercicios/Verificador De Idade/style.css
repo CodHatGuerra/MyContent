@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(74, 74, 212);
+    font-size: large;
+}
+
+header {
+    text-align: center;
+    margin: 2rem;
+
+}
+
+main {
+    background-color: white;
+    padding: 1rem;
+    width: 55vw;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+
+#div2 p{
+    display: inline-block;
+    margin-top: 0.3rem;
+    margin-right: 0.5rem;
+}
+
+#btn {
+    text-align: center;
+}
+
+button {
+    width: 70%;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+h2  {
+    margin-top: 1rem;
+    text-align: center;
+}

@@ -1,6 +1,6 @@
 function fatorial(n)
 {
-    for(var a=n; a<=1 ; a-- )
+    for(var a=n; a=>1 ; a-- )
     {
         n += n*a
         console.log(`Multiplicando ${n} por ${a}`)
