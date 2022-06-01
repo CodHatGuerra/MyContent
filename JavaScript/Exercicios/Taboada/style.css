@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgba(76, 20, 230, 0.671);
+}
+
+header {
+    text-align: center;
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+section {
+    background-color: white;
+    margin: 0 auto;
+    width: 75vw;
+    height: auto;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+select {
+    width: 40vw;
+    padding-bottom: 10rem;
+    margin-bottom: 5rem;
+    border-radius: 1rem;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+footer {
+    text-align: center;
+}
+
+section > div {
+    padding: 0.5rem;
+}
+
+#label {
+    font-size: 1.2rem;
+}
+
+footer {
+    padding: 1rem;
+}
+
+input[type="number"] {
+    text-align: center;
+    font-size: 1rem;
+}

@@ -1,0 +1,22 @@
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\API A.csproj.AssemblyReference.cache
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\API A.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\API A.AssemblyInfoInputs.cache
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\API A.AssemblyInfo.cs
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\API A.csproj.CoreCompileInputs.cache
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\API A.exe
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\API A.deps.json
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\API A.runtimeconfig.json
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\API A.dll
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\API A.pdb
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\API A.csproj.CopyComplete
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\API A.dll
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\refint\API A.dll
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\API A.pdb
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\API A.genruntimeconfig.cache
+C:\Users\inliv\OneDrive\Área de Trabalho\API A\obj\Debug\net6.0\ref\API A.dll

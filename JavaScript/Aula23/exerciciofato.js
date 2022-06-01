@@ -1,11 +1,13 @@
 function fatorial(n)
 {
-    for(var a=n; a=>1 ; a-- )
+    if(n == 1)
     {
-        n += n*a
-        console.log(`Multiplicando ${n} por ${a}`)
+        return 1
     }
-    return n
+    else
+    {
+        return n * fatorial(n -1)
+    }
 }
 
-console.log(fatorial(5))
+console.log(fatorial(4))

@@ -1,0 +1,27 @@
+dotnet add package System.Data.SqlClient
+
+
+
+                    Console.WriteLine("Digite o ID: ");
+                    Usuario.id = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite o Login: ");z
+                    Usuario.login = Console.ReadLine().ToString();
+                    Console.WriteLine("Digite a Senha: ");
+                    Usuario.senha = Console.ReadLine().ToString();
+                    Console.WriteLine("Digite o Email: ");
+                    Usuario.email = Console.ReadLine().ToString();
+
+
+
+                 case 2:
+                    // code block
+                 break;
+                 case 3:
+                    // code block
+                 break;
+                 case 4:
+                    // code block
+                break;   
+                 case 5:
+                    // code block
+                break;

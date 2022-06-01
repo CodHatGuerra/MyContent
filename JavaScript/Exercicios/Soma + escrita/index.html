@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Soma + escrita</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <p>Soma + Escrita a Passos.</p>
+        </header>
+        <section >
+            <p style="margin-bottom: 1rem; font-size: 1.3rem;padding-top: 1rem;">Digite o Valor Para Soma Sequencial: </p>
+            <div id="valor">
+                <label style="font-size: 1.5rem;margin-left: 1rem;" for="inpValor">Inicio: </label>
+                <input type="number" style="padding-top: 0.5rem" name="Valor" id="inpInicio">
+            </div>
+            <div id="valor" style="margin-top: 0.5rem;">
+                <label style="font-size: 1.5rem;margin-left: 1rem;" for="inpValor">Passo: </label>
+                <input type="number" style="padding-top: 0.5rem;" name="Valor" id="inpPasso">
+            </div>
+            <div id="valor" style="margin-top: 0.5rem;">
+                <label style="font-size: 1.5rem;margin-left: 1rem;" for="inpValor">Fim:   </label>
+                <input type="number" style="padding-top: 0.5rem;" name="Valor" id="inpFim">
+            </div>
+            <input type="button" onclick="contar()" value="Contar" style="padding: 0.6rem 5rem;border-radius: 1rem;font-size: 1.3rem;margin-bottom: 2rem;">
+            <div id="dinamico">
+                
+            </div>
+        </section>
+        <footer>
+
+        </footer>
+    </div>
+    <script src="code.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(7, 50, 225, 0.82);
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    font-size: 2rem;
+    font-family: cursive;
+    color: aliceblue;
+    
+}
+
+section {
+    width: 75vw;
+    height: auto;
+    background-color: white;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#valor {
+    text-align: left;
+
+}
+
+input[type="number"] {
+    text-align: center;
+    border: 2px solid black;
+    margin-left: 0.5rem;
+    border-radius: 1rem;
+    font-family: monospace;
+    margin-bottom: 1rem;
+
+}
+
