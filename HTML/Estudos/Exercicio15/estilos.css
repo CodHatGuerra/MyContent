@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(0, 0, 0);
+    
+}
+
+header h1 {
+    padding: 5px 20px;
+    margin: 0;
+    float: left;
+    color: white;
+}
+
+header ul {
+  
+    list-style-type: none;
+    overflow: hidden;
+}
+
+header li {
+    float: left;
+    
+
+}
+
+header a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 14px 20px;
+    font-size: 20px;
+    color: white;
+}
+
+header a:hover {
+    background-color: chartreuse;
+    transition: 0.1s;
+}
+
+header a:active {
+    background-color: red;
+}
+
+/*mainnnnnnnnnnn asiiiiiideeeeeeeee articleeeeeeeeee*/
+
+main aside {
+    background-color: blueviolet;
+    width: 30vw;
+    height: calc(100vh - 55px);
+    float: left;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+
+aside a {
+    background-color: antiquewhite;
+    color: rgb(2, 2, 2);
+    display: inline-block;
+    text-decoration: none;
+    width: 80%;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 10px 35px;
+    box-shadow: 2px 2px 5px black;
+}
+
+main a:hover {
+    background-color: chartreuse;
+    transition: 0.1s;
+}
+
+main a:active {
+    background-color: red;
+}
+
+/*ARTICLEEEEEEE*/
+
+article {
+    float: left;
+    width: 70%;
+    background-color: antiquewhite;
+    height: calc(100vh - 55px);
+}
+
+article img {
+    width: 250px;
+    height: 250px;
+    float: left;
+}
+
+article p {
+    font-size: 20px;
+}
+
+article h1 {
+    margin-top: 10px;
+    padding: 15px;
+}
+
+/*Footer*/
+
+footer {
+    background-color: black;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    padding: 20px;
+    text-align: center;
+}

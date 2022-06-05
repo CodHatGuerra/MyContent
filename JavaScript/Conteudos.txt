@@ -1,7 +1,7 @@
-Functions
+Functions (arrow functions, callbeck, iife, funcoes anonimas) java script funcional
 Objetos
 Modularizacao
-RegEX
+RegEX (expressoes regulares)
 JSON
 Ajax
 NodeJS
