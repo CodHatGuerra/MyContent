@@ -10,7 +10,6 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     height: 400px;
-    justify-content: ;
     align-items: center;
     align-content: space-around;
 }

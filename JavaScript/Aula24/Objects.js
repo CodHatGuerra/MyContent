@@ -35,4 +35,77 @@ usuario2 = {
     }
 }
 
+
+
 console.log(usuario2.digaOi('Gaabriel'))
+
+
+var usuario4 = {
+    nome: 'Gabriel Guerra',
+    estado: 'Rio de Janeiro'
+}
+
+var extraInfo = {
+    pais: 'Brasil',
+    estado: 'Rio de Janeiro'
+}
+
+var novoUsuario = Object.assign({}, usuario4, extraInfo)
+console.log(novoUsuario)
+
+var novoUsuario2 = {
+    ...usuario4,
+    ...extraInfo
+}
+
+console.log(novoUsuario2)
+
+
+var nomeVariavel = 'estado'
+
+var usuario5 = {
+   [nomeVariavel] : 'são paulo'  
+}
+
+console.log(usuario5)
+
+
+//getters e setters
+
+var usuarios = [
+    {
+        nome: 'Gabriel',
+        idade: 28
+    },
+    {
+        nome: 'fernando',
+        idade: 36
+    },
+    {
+        nome: 'rodrigo',
+        idade: 30
+    }
+]
+
+    console.log(usuarios)
+
+
+
+/* */
+
+var usuario = 
+{
+    atual: 0,
+    proximo: function(n)
+    {
+        this.atual + 1
+    },
+
+    anterior: function(n)
+    {
+        this.atual - 1
+    }
+
+
+}
+    
