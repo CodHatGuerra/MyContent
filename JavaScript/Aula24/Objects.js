@@ -87,7 +87,7 @@ var usuarios = [
     }
 ]
 
-    console.log(usuarios)
+
 
 
 
@@ -95,17 +95,30 @@ var usuarios = [
 
 var usuario = 
 {
-    atual: 0,
+    posicao: 0,
     proximo: function(n)
     {
-        this.atual + 1
+        ++this.posicao 
     },
 
     anterior: function(n)
     {
-        this.atual - 1
+        --this.posicao 
+    },
+    get atual()
+    {
+        return usuarios[this.posicao]
+    },
+
+    set atual(n)
+    {
+        this.posicao = n
     }
-
-
 }
     
+
+console.log(usuario.atual)
+usuario.proximo()
+console.log(usuario.atual)
+usuario.atual = 0
+console.log(usuario.atual)

@@ -8,25 +8,25 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MVC_Enquete
 build_property.RootNamespace = MVC_Enquete
-build_property.ProjectDir = c:\Users\inliv\OneDrive\Área de Trabalho\MyContent\C#\MVC\MVC-Enquete\
+build_property.ProjectDir = /home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\inliv\OneDrive\Área de Trabalho\MyContent\C#\MVC\MVC-Enquete
+build_property.MSBuildProjectDirectory = /home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/inliv/OneDrive/Área de Trabalho/MyContent/C\#/MVC/MVC-Enquete/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/home/codehat/Desktop/MyContent/C\#/MVC/MVC-Enquete/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/inliv/OneDrive/Área de Trabalho/MyContent/C\#/MVC/MVC-Enquete/Views/Home/Responder.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXNwb25kZXIuY3NodG1s
+[/home/codehat/Desktop/MyContent/C\#/MVC/MVC-Enquete/Views/Home/Responder.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9SZXNwb25kZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/inliv/OneDrive/Área de Trabalho/MyContent/C\#/MVC/MVC-Enquete/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/home/codehat/Desktop/MyContent/C\#/MVC/MVC-Enquete/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/inliv/OneDrive/Área de Trabalho/MyContent/C\#/MVC/MVC-Enquete/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/home/codehat/Desktop/MyContent/C\#/MVC/MVC-Enquete/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

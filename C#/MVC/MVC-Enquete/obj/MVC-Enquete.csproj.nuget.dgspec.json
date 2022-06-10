@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\inliv\\OneDrive\\Área de Trabalho\\MyContent\\C#\\MVC\\MVC-Enquete\\MVC-Enquete.csproj": {}
+    "/home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/MVC-Enquete.csproj": {}
   },
   "projects": {
-    "C:\\Users\\inliv\\OneDrive\\Área de Trabalho\\MyContent\\C#\\MVC\\MVC-Enquete\\MVC-Enquete.csproj": {
+    "/home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/MVC-Enquete.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\inliv\\OneDrive\\Área de Trabalho\\MyContent\\C#\\MVC\\MVC-Enquete\\MVC-Enquete.csproj",
+        "projectUniqueName": "/home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/MVC-Enquete.csproj",
         "projectName": "MVC-Enquete",
-        "projectPath": "C:\\Users\\inliv\\OneDrive\\Área de Trabalho\\MyContent\\C#\\MVC\\MVC-Enquete\\MVC-Enquete.csproj",
-        "packagesPath": "C:\\Users\\inliv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\inliv\\OneDrive\\Área de Trabalho\\MyContent\\C#\\MVC\\MVC-Enquete\\obj\\",
+        "projectPath": "/home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/MVC-Enquete.csproj",
+        "packagesPath": "/home/codehat/.nuget/packages/",
+        "outputPath": "/home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\inliv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/codehat/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -57,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }
