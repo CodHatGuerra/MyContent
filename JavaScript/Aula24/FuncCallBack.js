@@ -1,20 +1,23 @@
-function somaCallback(a,b, fnCallback) {
-    return fnCallback(a + b)
-}
-
-console.log(somaCallback(10,3, function(total)
+function fncallback(valor)
 {
-    return total * 2
-}))
-
-
-
-function subtraiCallback(a,b, fnsubCallback) {
-    return fnsubCallback(a - b)
+    console.log(`O Valor da operacao foi ${valor}`)
 }
 
-var subtrai = function(total) {
-    return total * 2
+function somar(a, b, cb)
+{
+    let tot = a + b
+    cb(tot)
 }
 
-console.log(subtraiCallback(10,3, subtrai))
+
+function subtrair(a, b, cb)
+{
+    let tot = a - b
+    cb(tot)
+}
+
+
+somar(10,5, fncallback)
+
+subtrair(10, 3, fncallback)
+
