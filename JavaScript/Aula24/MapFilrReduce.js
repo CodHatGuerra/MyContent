@@ -85,7 +85,7 @@ const pessoas = [
 
 {(function(valorAcumulador, valorArray){}, {})}
 
-var valoragp = pessoas.reduce(function(valorAcumulador, valorArray){
+var valoragp = pessoas.reduce((valorAcumulador, valorArray) =>{
     const propMaiorOuMenor = valorArray.idade >= 18 ? 'maiores' : 'menores'
     valorAcumulador[propMaiorOuMenor].push(valorArray)
     return valorAcumulador
