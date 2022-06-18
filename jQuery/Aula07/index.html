@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/jQuery/tmp/jquery.js"></script>
+    <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script src="code.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <p id="1">Gabriel Guerra</p>
+    <p id="2"></p>
+    <p id="3"></p>
+
+    <script>
+        $("1").click((event)=>(
+            $("#3").text(`Valor de X: ${event.pageX}px Valor de Y: ${event.pageY}`)
+        ))
+    </script>
+</body>
+</html>

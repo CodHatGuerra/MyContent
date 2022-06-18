@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/jQuery/tmp/jquery.js"></script>
+    <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <script src="code.js"></script>
+    <style>
+        #block {
+            background-color: black;
+            height: 200px;
+            width: 200px;
+        }
+        #block1 {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;justify-content: space-around;">
+        <div id="block1"></div>
+        <div id="block"></div>
+    </div>
+    <table id="example" class="display" width="100%"></table>
+</body>
+    <p id="texto"></p>
+
+    <script>
+        $("#block").on(
+            {
+                click:()=>($("#texto").text("Gabriel G")),
+                mouseover:()=>($("#texto").text("Mouse Dentro")),
+                mouseout:()=>($("#texto").text("Mouse Fora"))
+            }
+        )
+
+        $("#block1").click(()=>(
+            $("#block").trigger("click")
+        ))
+    </script>
+</body>
+</html>
