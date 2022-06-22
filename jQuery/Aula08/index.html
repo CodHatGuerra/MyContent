@@ -6,21 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="node_modules/jQuery/tmp/jquery.js"></script>
-    <script src="node_modules/datatables.net/js/jquery.dataTables.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     <script src="code.js"></script>
     <style>
 
     </style>
 </head>
 <body>
-
-    <p id="texto"></p>
-
+    <div id="1">CFB Cursos</div>
+    <br>
+    <p id="2">Curso de jQuery</p>
+    <br>
+    <p id="3">teste</p>
+    <br>
     <script>
-        $(document).mousemove((event)=>(
-            $('#texto').text(`Mouse X: ${event.pageX}px, Mouse Y: ${event.pageY}px`)
-        ))
+        $(document).click((event)=>{
+            $(`#${event.target.id}`).text(`X: ${event.pageX}, Y: ${event.pageY} , Objeto que foi Clicado ${event.target.nodeName}`)
+
+            if(event.target.id == "3"){
+            alert("Resultado Selecionado")
+            }
+        })
     </script>
 </body>
 </html>

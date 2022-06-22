@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="node_modules/jQuery/tmp/jquery.js"></script>
+    <script src="code.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <br>
+    <p id="2">Curso de jQuery</p>
+    <br>
+    <p id="3">teste</p>
+    <br>
+    <script>
+        $(document).on({
+            click: ()=>{$(`#3`).text(`${event.type} : ${event.which}`)},
+            keydown: ()=>{
+                $(`#3`).text(`${event.type} : ${event.which}`)
+                if(event.which == 13)
+                {
+                    window.alert("Voce Precionou a tecla 13 !")
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

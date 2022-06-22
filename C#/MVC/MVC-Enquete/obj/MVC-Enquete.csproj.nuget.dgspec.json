@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/MVC-Enquete.csproj": {}
+    "C:\\Users\\CodHatGuerra\\Desktop\\MyContent\\C#\\MVC\\MVC-Enquete\\MVC-Enquete.csproj": {}
   },
   "projects": {
-    "/home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/MVC-Enquete.csproj": {
+    "C:\\Users\\CodHatGuerra\\Desktop\\MyContent\\C#\\MVC\\MVC-Enquete\\MVC-Enquete.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/MVC-Enquete.csproj",
+        "projectUniqueName": "C:\\Users\\CodHatGuerra\\Desktop\\MyContent\\C#\\MVC\\MVC-Enquete\\MVC-Enquete.csproj",
         "projectName": "MVC-Enquete",
-        "projectPath": "/home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/MVC-Enquete.csproj",
-        "packagesPath": "/home/codehat/.nuget/packages/",
-        "outputPath": "/home/codehat/Desktop/MyContent/C#/MVC/MVC-Enquete/obj/",
+        "projectPath": "C:\\Users\\CodHatGuerra\\Desktop\\MyContent\\C#\\MVC\\MVC-Enquete\\MVC-Enquete.csproj",
+        "packagesPath": "C:\\Users\\CodHatGuerra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CodHatGuerra\\Desktop\\MyContent\\C#\\MVC\\MVC-Enquete\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codehat/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\CodHatGuerra\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

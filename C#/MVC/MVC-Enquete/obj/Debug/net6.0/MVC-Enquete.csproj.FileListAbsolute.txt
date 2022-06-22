@@ -46,3 +46,27 @@ C:\Users\inliv\OneDrive\Área de Trabalho\MyContent\C#\MVC\MVC-Enquete\obj\Debug
 C:\Users\inliv\OneDrive\Área de Trabalho\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.pdb
 C:\Users\inliv\OneDrive\Área de Trabalho\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.genruntimeconfig.cache
 C:\Users\inliv\OneDrive\Área de Trabalho\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\ref\MVC-Enquete.dll
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\bin\Debug\net6.0\appsettings.json
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\bin\Debug\net6.0\MVC-Enquete.staticwebassets.runtime.json
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\bin\Debug\net6.0\MVC-Enquete.exe
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\bin\Debug\net6.0\MVC-Enquete.deps.json
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\bin\Debug\net6.0\MVC-Enquete.runtimeconfig.json
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\bin\Debug\net6.0\MVC-Enquete.dll
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\bin\Debug\net6.0\MVC-Enquete.pdb
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.csproj.AssemblyReference.cache
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.AssemblyInfoInputs.cache
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.AssemblyInfo.cs
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.csproj.CoreCompileInputs.cache
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.RazorAssemblyInfo.cache
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.RazorAssemblyInfo.cs
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\scopedcss\bundle\MVC-Enquete.styles.css
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.dll
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\refint\MVC-Enquete.dll
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.pdb
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\MVC-Enquete.genruntimeconfig.cache
+C:\Users\CodHatGuerra\Desktop\MyContent\C#\MVC\MVC-Enquete\obj\Debug\net6.0\ref\MVC-Enquete.dll
