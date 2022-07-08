@@ -18,22 +18,17 @@ const cpfs = `
 Os CPFs São:
 234.906.228-71 215.978.456-12 047.258.369-96
 
-1515
 
-asdasd
 963.987.321.00
 `
 
 const ips = `
 Os ips são:
- 0.0.0.0
+ 0.0.0.0.
  192.168.1.1
  10.10.5.12
- 255.255.255.255 
- 355.654.987.888 
-
+ 255.255.255.255
 `
-/*
 
 const arquivos = [
     'Atenção.jpg',
@@ -45,7 +40,7 @@ const arquivos = [
 ]
 
 const regExp1 = /café/gi;
-
+/*
 // test retorna booleano caso o regex for verdadeiro ou falso
 console.log(regExp1.test(texto))
 
@@ -88,18 +83,17 @@ const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz ܓ۞ 012
 console.log(alfabeto)
 
 console.log(alfabeto.match(/[\S]+/g))
-
-
-*/ console.log(cpfs.match(/((\d{3}).){2}(\d{3})-(\d{2})/g))
-/*
-
-console.log(ips.match(/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)(\.)){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)/g))
-
-for(let i=0; i < 300; i++)
-{
-    const ip = `${i}.${i}.${i}.${i}`
-    console.log(ip, ip.match(/^((25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]\d|\d)(\.)){3}((25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]\d|\d))/g))
-}
-
 */
 
+
+console.log(cpfs.match(/([1-9]*.)*(-[1-9]*)-/g))
+
+
+
+
+
+
+/*234.906.228-71 215.978.456-12 047.258.369-96
+
+
+963.987.321.00*/
