@@ -33,6 +33,19 @@ Os ips são:
  355.654.987.888 
 
 `
+const html = "<p>Olá Mundo</p> <p>Olá de novo</p>"
+
+const html12 = `<p ckass="teste teste" data-teste='teste'>Olá Mundo</p> <p>Olá Mundo</p> <div>Sou a Div</div>`
+
+const nome = `1234567890`
+
+const lookahead = 
+   `ONLINE 192.168.0.1 ABCDEF inactive
+    OFFLINE 192.168.0.2 ABCDEF active
+    ONLINE 192.168.0.3 ABCDEF active
+    ONLINE 192.168.0.4 ABCDEF active
+    OFFLINE 192.168.0.5 ABCDEF active
+    OFFLINE 192.168.0.6 ABCDEF inactive`
 /*
 
 const arquivos = [
@@ -77,8 +90,6 @@ for(i of arquivos)
     console.log(i.match(regExp3))
 }
 
-const html = "<p>Olá Mundo</p> <p>Olá de novo</p>"
-
 console.log(html.match(/<.+?>.+?<\/.+?>/))
 
 
@@ -90,7 +101,7 @@ console.log(alfabeto)
 console.log(alfabeto.match(/[\S]+/g))
 
 
-*/ console.log(cpfs.match(/((\d{3}).){2}(\d{3})-(\d{2})/g))
+console.log(cpfs.match(/((\d{3}).){2}(\d{3})-(\d{2})/g))
 /*
 
 console.log(ips.match(/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)(\.)){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)/g))
@@ -101,5 +112,29 @@ for(let i=0; i < 300; i++)
     console.log(ip, ip.match(/^((25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]\d|\d)(\.)){3}((25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]\d|\d))/g))
 }
 
-*/
 
+
+console.log(html12.match(/<(\w+).*? +>.+?<\/\1>/gi))
+
+
+var teste = nome.replace(/(\d){10}/gi,'($1$2)$3$4$5-$6$7$8$9$10')
+console.log(teste)
+
+
+// POSITIVE LOOK AHEAD  (Frases que tem active)
+*/
+console.log(lookahead)
+/*
+console.log(lookahead.match(/\S.+(?=[^in]active)/gim))
+
+//Negative Look Ahead (Frases que não tem active)
+
+console.log(lookahead.match(/^(?!.+[^in]active).+$/gim))
+
+//Positive Look Behind
+*/
+//console.log(lookahead.match(/(?<=ONLINE\s+)\S.*/gim))
+
+// Negative Look Behind ( frases que não começam com online)
+
+console.log(lookahead.match(/^.+(?<!ONLINE.+)$/gim ))
