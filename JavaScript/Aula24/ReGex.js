@@ -46,6 +46,13 @@ const lookahead =
     ONLINE 192.168.0.4 ABCDEF active
     OFFLINE 192.168.0.5 ABCDEF active
     OFFLINE 192.168.0.6 ABCDEF inactive`
+
+
+const palavras = `Um Texto que tem palavras acentuadas e quebras de linhas.
+Atenção, este é um texto para capturar todas as palavras.
+Mesmo que não forem match de
+Vamos ver se seremos bem sucedidos.`
+
 /*
 
 const arquivos = [
@@ -102,7 +109,7 @@ console.log(alfabeto.match(/[\S]+/g))
 
 
 console.log(cpfs.match(/((\d{3}).){2}(\d{3})-(\d{2})/g))
-/*
+
 
 console.log(ips.match(/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)(\.)){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)/g))
 
@@ -112,19 +119,15 @@ for(let i=0; i < 300; i++)
     console.log(ip, ip.match(/^((25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]\d|\d)(\.)){3}((25[0-5]|2[0-4][0-9]|1\d{2}|[1-9]\d|\d))/g))
 }
 
-
-
 console.log(html12.match(/<(\w+).*? +>.+?<\/\1>/gi))
-
 
 var teste = nome.replace(/(\d){10}/gi,'($1$2)$3$4$5-$6$7$8$9$10')
 console.log(teste)
 
-
 // POSITIVE LOOK AHEAD  (Frases que tem active)
-*/
+
 console.log(lookahead)
-/*
+
 console.log(lookahead.match(/\S.+(?=[^in]active)/gim))
 
 //Negative Look Ahead (Frases que não tem active)
@@ -136,5 +139,9 @@ console.log(lookahead.match(/^(?!.+[^in]active).+$/gim))
 //console.log(lookahead.match(/(?<=ONLINE\s+)\S.*/gim))
 
 // Negative Look Behind ( frases que não começam com online)
-
+/*
 console.log(lookahead.match(/^.+(?<!ONLINE.+)$/gim ))
+
+console.log(palavras.match(/[\wÁ-ú]+/gim))
+*/
+console.log(lookahead.replace(/\D*/gim," "))
