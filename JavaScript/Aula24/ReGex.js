@@ -107,9 +107,9 @@ console.log(alfabeto)
 
 console.log(alfabeto.match(/[\S]+/g))
 
-
+*/
 console.log(cpfs.match(/((\d{3}).){2}(\d{3})-(\d{2})/g))
-
+/*
 
 console.log(ips.match(/((25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)(\.)){3}(25[0-5]|2[0-4]\d|1\d{2}|[1-9]\d|\d)/g))
 
@@ -144,4 +144,3 @@ console.log(lookahead.match(/^.+(?<!ONLINE.+)$/gim ))
 
 console.log(palavras.match(/[\wÁ-ú]+/gim))
 */
-console.log(lookahead.replace(/\D*/gim," "))
