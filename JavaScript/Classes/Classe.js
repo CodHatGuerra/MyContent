@@ -34,31 +34,31 @@ class Carro {
     }
 
     set setMarca(marca) {
-        tis.marca = marca
+        this.marca = marca
     }
 
     set setModelo(modelo) {
-        tis.modelo = modelo
+        this.modelo = modelo
     }
 
     set setCor(cor) {
-        tis.cor = cor
+        this.cor = cor
     }
 
     set setLigado(Ligado) {
-        tis.Ligado = Ligado
+        this.Ligado = Ligado
     }
 
     set setMarca(marca) {
-        tis.marca = marca
+        this.marca = marca
     }
 
     set setKm(km) {
-        tis.km = km
+        this.km = km
     }
 
     set setComb(comb) {
-        tis.comb = comb
+        this.comb = comb
     }
     
     info(){
