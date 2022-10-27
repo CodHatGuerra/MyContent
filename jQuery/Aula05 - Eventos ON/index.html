@@ -11,26 +11,39 @@
             height: 200px;
             background-color: #000;
         }
+        #bloco1 {
+            width: 200px;
+            height: 200px;
+            background-color: #000;
+            margin-top: 15px;
+        }
     </style>
     <title>Document</title>
 </head>
 <body>
     <div id="bloco">
     </div>
+    <div id="bloco1">
+    </div>
     <p id="texto"></p>
+    <p id="texto1"></p>
     <script>
-        $('#bloco').click(()=>{
-            $('#texto').text("Curso de Jquery")
+        $('#bloco').on('click dblclick', ()=>{
+            $('#texto').text("Clique no quadrado")
         })
-        $('#bloco').mouseenter(()=>{
-            $('#texto').text("Mouse entrou no quadrado")
+
+        $('#bloco1').on({
+            click:()=>{
+                $('#texto1').text('Clicado')
+            },
+            mouseenter:()=>{
+                $('#texto1').text('Mouse Entrou')
+            },
+            mouseout:()=>{
+                $('#texto1').text('Mouse Saiu')
+            }
         })
-        $('#bloco').mouseleave(()=>{
-            $('#texto').text("Mouse Saiu no quadrado")
-        })
-        $("#texto").text("CFB Cursos")
     </script>
 </body>
 </html>
-
 <!-- https://www.youtube.com/watch?v=6rvBh27nHXk -->

@@ -15,20 +15,13 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="bloco">
-    </div>
+    <label for="nome">Digite seu nome</label>
+    <input type="text" id="nome">
     <p id="texto"></p>
     <script>
-        $('#bloco').click(()=>{
-            $('#texto').text("Curso de Jquery")
+        $('#nome').keyup(()=>{
+            $('#texto').text($('#nome').val())
         })
-        $('#bloco').mouseenter(()=>{
-            $('#texto').text("Mouse entrou no quadrado")
-        })
-        $('#bloco').mouseleave(()=>{
-            $('#texto').text("Mouse Saiu no quadrado")
-        })
-        $("#texto").text("CFB Cursos")
     </script>
 </body>
 </html>
