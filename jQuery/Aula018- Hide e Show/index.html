@@ -5,32 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Document</title>
     <style>
-        #bloco {
+        .caixa {
+            border: 1px solid #000;
             width: 200px;
             height: 200px;
-            background-color: #000;
-        }
-        #bloco2 {
-            margin-top: 20px;
-            width: 200px;
-            height: 200px;
-            background-color: #000;
+            background-color: rgba(224, 69, 21, 0.562);
         }
     </style>
-    <title>Document</title>
 </head>
 <body>
-    <div id="bloco"></div>
-    <div id="bloco2"></div>
-    <p id="texto"></p>
+    <div class="caixa" id="caixa">
+        <h3>CFB Cursos</h3>
+        <p>Curso de jQuery</p>
+    </div>
+    <button id="btnMOstrar">Mostrar</button>
+    <button id="btnOcultar">Ocultar</button>
     <script>
-        $('#bloco').on('click dblclick', ()=>{
-            $('#texto').text("Clique no quadrado")
+        $('#btnMOstrar').click(()=>{
+            $('#caixa').show()
         })
 
-        $('#bloco2').click(()=>{
-            $('#bloco').trigger('click')
+        $('#btnOcultar').click(()=>{
+            $('#caixa').hide()
         })
     </script>
 </body>

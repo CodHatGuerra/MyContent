@@ -8,12 +8,15 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="bloco"></div>
-    <p id="texto"></p>
+    <div id="texto1">CFB Cursos</div>
+    <br>
+    <p id="texto2">CFB Cursos</p>
+    <br>
+    <p id="resultado"></p>
     <script>
-        $(document).mousemove((event)=>{
-            $('#texto').text(event.pageX  + "  " + event.pageY)
-        })
+        $(document).click((event)=>{
+            $('#resultado').text(`X: ${event.pageX} Y: ${event.pageY} Nome: ${event.target.nodeName}`)
+        });
     </script>
 </body>
 </html>
