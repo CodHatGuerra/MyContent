@@ -1,2 +1,0 @@
-killall speech-dispatcher
-sudo apt-get remove speech-dispatcher
