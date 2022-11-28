@@ -27,3 +27,6 @@
 
 **Lembrando que a aplicação não pode estar em endereço de Loopback (127.0.0.1) deve estar em 0.0.0.0:******
 **-->>  `ss -nltup` comando utilizado para listar os sockets**
+
+**Caso houver problema com LoopBack precisa adicionar a variavel de ambiente no serviço**
+**``**
