@@ -1,3 +1,5 @@
+// #This is a Basic Structure of an JS File to compose this WebSite.
+
 "use strict"    
 // #region [ Propriedades ]
 let table = null;
@@ -28,8 +30,11 @@ $(document).ready(function () {
         columns: colunas,
         columnDefs: colunasConfig,
         order: [],
-        searching: false,
         lengthChange: false,
+        dom: 'B l<"tabela-toolbar">frtip',
+        initComplete: function () {
+                $("#table_filter").append('<button type="button" class="btn btn-success col-7 mb-3" data-bs-toggle="modal" onclick="new_GuideModal()" data-bs-target="#windowModal">New</button>');
+        }
     });
 
     $('#windowModal').on('hidden.bs.modal', function (e) {

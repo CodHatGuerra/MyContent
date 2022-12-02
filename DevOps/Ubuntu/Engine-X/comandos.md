@@ -29,4 +29,4 @@
 **-->>  `ss -nltup` comando utilizado para listar os sockets**
 
 **Caso houver problema com LoopBack precisa adicionar a variavel de ambiente no serviço**
-**``**
+**`Environment=ASPNETCORE_URLS=http://0.0.0.0:5000 ;`**
