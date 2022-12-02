@@ -14,7 +14,7 @@
         <div class="header">
             <div class="side-nav">
                 <a href="#" class="logo">
-                    <img src="../assets/master/imgs/1619197719688.png" class="logo-img">
+                    <img src="../master/imgs/1619197719688.png" class="logo-img">
                 </a>
                 <ul class="nav-links">
                     <li><a href="#"><i class="fa-solid fa-database"></i><p>Application</p></a></li>
@@ -37,50 +37,11 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="windowModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Merchant Settings</h3>
-                    <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="p-3 was-validated" id="form_Merchant">
-                        <div class="my-3 was-validated">
-                            <div class="input-group">
-                                <span class="input-group-text">Guide id</span>
-                                <input class="form-control" type="text" name="f_Guide" id="f_Guide" onclick="onclick_CopyGuide()" onkeydown="return false;">
-                            </div>
-                            <div class="form-floating mb-3 mt-3">
-                                <input class="form-control" type="text" name="f_MerchantName" id="f_MerchantName" placeholder="Merchant Name: " required>
-                                <label class="form-label" for="f_MerchantName">Merchant Name:</label>
-                            </div>
-                            <div class="my-3">
-                                <label class="form-label" for="f_Name">Integration Status:</label>
-                                <div>
-                                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked value="true">
-                                    <label class="btn btn-outline-success" for="success-outlined">Active</label>
-                                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off" value="false">
-                                    <label class="btn btn-outline-danger" for="danger-outlined">Inactive</label>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" data-bs-dimiss="modal" class="btn btn-success" aria-label="Close" form="form_Merchant" onclick="onclick_Save()">Save</button>
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 <body>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="javascript.js"></script>
-    
 </body>
 </html>
