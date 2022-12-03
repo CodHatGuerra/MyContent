@@ -35,21 +35,65 @@
                     <div class="container mt-3">
                         <div class="row mb-3">
                           <div class="col-5">
-                            <select class="form-select col-12" aria-label="Default select example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                          </select>
+                            <select class="form-select col-12" aria-label="Default select example" id="select_Merchant">
+                                <option value="" disabled selected>Select The Merchant Channel</option>
+                            </select>
                           </div>
                           <div class="col-3 offset-4 row justify-content-end">
                             <button type="button" class="btn btn-success" data-bs-toggle="modal" onclick="" data-bs-target="#windowModal">New<i class="fa fa-plus-square-o ml-2" aria-hidden="true"></i></button>
                           </div>
                         </div>
                         <table class="table table-bordered table-striped  table-striped table-hover" id="table">
-
                         </table>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="windowModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header d-block">
+                    <button type="button" class="btn btn-close float-right" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h3 class="modal-title text-center">Sales Channel</h3>
+                </div>
+                <div class="modal-body">
+                    <form class="p-3 was-validated" id="form_Merchant">
+                        <div class="mb-3">
+                            <label class="form-label" for="f_Merchant">Merchant:</label>
+                            <select class="form-select col-6" aria-label="Default select example" id="select_Merchant">
+                                <option value="" disabled selected>Select The Merchant Channel</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="f_Nome">Sales Channel:</label>
+                            <select class="form-select col-6" aria-label="Default select example" id="select_Merchant">
+                                <option value="" disabled selected>Select The Merchant Channel</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="f_Nome">External Id:</label>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="f_Nome">Application:</label>
+                            <select class="form-select col-6" aria-label="Default select example" id="select_Merchant">
+                                <option value="" disabled selected>Select The Merchant Channel</option>
+                            </select>
+                        </div>
+                        <div class="mb-5">
+                            <button type="submit" class="btn btn-success" data-bs-toggle="modal" onclick="table_Adjust()" data-bs-target="#windowModal">Save<i class="fa fa-check-circle-o ml-2" aria-hidden="true"></i></button>
+                        </div>
+                    </form>
+                    <div class="container mb-3">
+                        <label for="" class="d-inline-block mr-2">Parameters</label>
+                        <button type="button" class="btn btn-success col-2 mb-3" onclick="">Add<i class="fa fa-plus-square-o ml-2" aria-hidden="true"></i></button>
+                        <table width="100%" class="table table-bordered table-striped  table-striped table-hover" id="table_Parameters">
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

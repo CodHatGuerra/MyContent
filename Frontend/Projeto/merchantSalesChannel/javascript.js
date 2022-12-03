@@ -1,46 +1,50 @@
 "use strict"    
-// #region [ Propriedades ]
+// #region [ Propy ]
 let table = null;
 let recent_Guide = null;
 
-// #endregion [ Propriedades ]
-// #region [ Eventos ]
+// #endregion [ Propy ]
+// #region [ Events ]
 $(document).ready(function () {
-    let colunas = [];
-    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_Edit('${e.Id}', '${e.Name}', ${e.IntegrationActivate})" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>` } });
-    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` } });
-    colunas.push({ title: "Merchant Name", data: 'Name' });
-    colunas.push({ title: "ID", data: function (e) { return `${e.Id}<a href="#"><i class="fa fa-clone" aria-hidden="true" onclick="onclick_CopyGuide('${e.Id}')"></i></a>` } });
-    colunas.push({ title: "Integration Status", data: function (e) { return e.IntegrationActivate == true ? "<i class='text-success'>Actived</i>" : "<i class='text-danger'>Desactived</i>" } });
+  select_Load() 
+  let colunas = [];
+  colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_Edit('${e.Id}', '${e.Name}', ${e.IntegrationActivate})" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>` } });
+  colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` } });
+  colunas.push({ title: "Key", data: function (e) { return ` <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="${e.Name}">`} });
+  colunas.push({ title: "Value", data: function (e) { return ` <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="${e.Id}">`} });
 
-    let colunasConfig = [];
-    colunasConfig.push({ targets: 0, width: "10", orderable: false });
-    colunasConfig.push({ targets: 1, width: "10", orderable: false });
+  let colunasConfig = [];
+  colunasConfig.push({ targets: [0, 1], orderable: false });
+  colunasConfig.push({ targets: [2, 3], orderable: false });
 
-    table = $('#table').DataTable({
-        ajax: {
-            type: "GET",
-            dataType: "json",
-            url: "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant",
-            dataSrc: '',
-            contentType: "application/json; charset=utf-8"
-        },
-        columns: colunas,
-        columnDefs: colunasConfig,
-        order: [],
-        searching: false,
-        lengthChange: false,
-    });
+  table = $('#table_Parameters').DataTable({
+      ajax: {
+          type: "GET",
+          dataType: "json",
+          url: "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant",
+          dataSrc: '',
+          contentType: "application/json; charset=utf-8"
+      },
+      columns: colunas,
+      columnDefs: colunasConfig,
+      order: [],
+      responsive: true,
+      searching: false,
+      lengthChange: false,
+  });
 
-    $('#windowModal').on('hidden.bs.modal', function (e) {
-      $(this)
-        .find("input,textarea,select")
-           .val('')
-           .end();
-    
-    })
+  $('#windowModal').on('hidden.bs.modal', function (e) {
+    $(this)
+      .find("input,textarea,select")
+         .val('')
+         .end();
+  
+  })
+  $(document).on('shown.bs.modal', function (e) {
+    $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
 });
-// #endregion [ Eventos ]
+});
+// #endregion [ Methods ]
 function onclick_Edit(merchant_Id, Name, Active) {
   $('#f_Guide').val(merchant_Id)
   $('#f_MerchantName').val(Name)
@@ -89,14 +93,20 @@ function onclick_CopyGuide(merchant_Id) {
 
 }
 // #region [ Metodos ]
-function guide_Generator() {
-    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-  );
-}
-
-function new_GuideModal() {
-  $('#f_Guide').val(guide_Generator())
+function select_Load() {
+  $.ajax({
+    type: "GET",
+    url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant`,
+    dataType: "json",
+    success : function (data) {
+      let response_Data = data;
+      response_Data.forEach(element => {
+        const optText = `${element.Name}`;
+        const optValue = `${element.Id}`;
+        $('#select_Merchant').append(`<option value="${optValue}">${optText}</option>`)
+      });
+    },
+  });
 }
 
 function message_Show(state, merchant_Id) {
@@ -154,4 +164,8 @@ function message_Show(state, merchant_Id) {
       })
     }
 }
-// #endregion [ Metodos ]
+
+function table_Adjust() {
+  $('#table_Parameters').DataTable().columns.adjust();
+}
+// #endregion [ Methods ]

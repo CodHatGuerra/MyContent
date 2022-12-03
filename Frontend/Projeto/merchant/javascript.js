@@ -28,6 +28,7 @@ $(document).ready(function () {
         columns: colunas,
         columnDefs: colunasConfig,
         order: [],
+        responsive: true,
         lengthChange: false,
         dom: 'B l<"tabela-toolbar">frtip',
         initComplete: function () {
