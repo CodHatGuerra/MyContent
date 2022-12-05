@@ -77,8 +77,8 @@ function onclick_Delete(merchant_Id) {
     $.ajax({
         type: "DELETE",
         url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${merchant_Id}`,
-        success : () => (message_Show(true), table.ajax.reload()),
-        error :  () => (message_Show(false)),
+        success : () => (message_Show('success'), table.ajax.reload()),
+        error :  () => (message_Show('error')),
     });
 }
 

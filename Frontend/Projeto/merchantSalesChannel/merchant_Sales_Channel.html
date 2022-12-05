@@ -35,7 +35,7 @@
                     <div class="mt-3">
                         <div class="row mb-3">
                           <div class="col-5">
-                            <select class="form-select col-12" aria-label="Default select example" id="select_Merchant">
+                            <select class="form-select col-12" id="select_Merchant" onchange="onchange_MerchantChannel()">
                                 <option value="" disabled selected>Select The Merchant Channel</option>
                             </select>
                           </div>
@@ -60,15 +60,15 @@
                 <div class="modal-body">
                     <form class="p-3 was-validated" id="form_Merchant">
                         <div class="mb-3">
-                            <label class="form-label" for="select_Merchant">Merchant:</label>
-                            <select class="form-select col-6" id="select_Merchant">
-                                <option value="" disabled selected>Select The Merchant Channel</option>
+                            <label class="form-label" for="select_MerchantModal">Merchant:</label>
+                            <select class="form-select col-6" id="select_MerchantModal">
+                                <option value="" disabled selected>Select Merchant</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="select_channel">Sales Channel:</label>
                             <select class="form-select col-6" id="select_channel">
-                                <option value="" disabled selected>Select The Merchant Channel</option>
+                                <option value="" disabled selected>Select Sales Channel</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -78,16 +78,22 @@
                         <div class="mb-3">
                             <label class="form-label" for="select_Application">Application:</label>
                             <select class="form-select col-6" id="select_Application">
-                                <option value="" disabled selected>Select The Merchant Channel</option>
+                                <option value="" disabled selected>Select Application</option>
                             </select>
                         </div>
                         <div class="mb-3">
-                            <button type="submit" class="btn btn-success" data-bs-toggle="modal" onclick="table_Adjust()" data-bs-target="#windowModal">Save<i class="fa fa-check-circle-o ml-2" aria-hidden="true"></i></button>
+                            <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#windowModal" onclick="onclick_SaveNewSalesChannel()">Save<i class="fa fa-check-circle-o ml-2" aria-hidden="true"></i></button>
                         </div>
                     </form>
-                    <div class="container mb-3 d-none" id="content_Parameters">
+                    <div class="container mb-3 " id="content_Parameters">
                         <label for="" class="d-inline-block mr-2">Parameters</label>
-                        <button type="button" class="btn btn-success col-2 mb-3" onclick="">Add<i class="fa fa-plus-square-o ml-2" aria-hidden="true"></i></button>
+                            <form action="" class="form-inline was-validated mb-3">
+                                <div>
+                                    <input type="text" class="form-control" placeholder="Key" required>
+                                    <input type="text" class="form-control" placeholder="Value" required>
+                                    <button type="button" class="btn btn-success" onclick="">Add<i class="fa fa-plus-square-o ml-2" aria-hidden="true"></i></button>
+                                </div>
+                            </form>
                         <table width="100%" class="table table-bordered table-striped  table-striped table-hover" id="table_Parameters">
                         </table>
                     </div>

@@ -31,20 +31,48 @@ function onclick_Edit(merchant_Id, Name, Active) {
   $('#danger-outlined').prop("checked", true)
 }
 
-function onclick_Save() {
+function onclick_SaveNewSalesChannel() {
     $.ajax({
-        type: recent_Guide != null ? "PUT" : "POST",
+        type: "POST",
         dataType: "json",
-        url: recent_Guide != null ? `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${recent_Guide}` : "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant",
+        url: "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
-            Id: recent_Guide != null ? "" : $('#f_Guide').val(),
-            Name : $('#f_MerchantName').val(),
-            IntegrationActivate : $('#success-outlined').is(':checked') == true ? true : false,
+            SalesChannelId: 
+            ExternalId : 
+            ApplicationId : 
         }),
-        success : () => (message_Show("success") , $('#windowModal').modal('toggle'), table.ajax.reload(), recent_Guide = null),
+        success : () => (message_Show("success") , $('#windowModal').modal('toggle'), table_SalesChannel.ajax.reload()),
         error :  () => (message_Show("error")),
     });
+}
+
+function onchange_MerchantChannel() {
+  console.log($('#select_Merchant').val())
+
+  if(table_Parameters == null) {
+    let colunas = [];
+    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` } });
+    colunas.push({ title: "Key", data: function (e) { return `${e.Name}`} });
+    colunas.push({ title: "Value", data: function (e) { return `${e.Id}`} });
+    
+    table_Parameters = $('#table_Parameters').DataTable({
+        ajax: {
+            type: "GET",
+            dataType: "json",
+            url: "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant",
+            dataSrc: '',
+            contentType: "application/json; charset=utf-8"
+        },
+        columns: colunas,
+        order: [],
+        autoWidth: false,
+        responsive: true,
+        searching: false,
+        lengthChange: false,
+    });
+  }
+  $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
 }
 
 function onclick_Delete(merchant_Id) {
@@ -70,14 +98,9 @@ function onclick_CopyGuide(merchant_Id) {
 function onclick_New() {
   if(table_Parameters == null) {
     let colunas = [];
-    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_Edit('${e.Id}', '${e.Name}', ${e.IntegrationActivate})" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>` } });
     colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` } });
-    colunas.push({ title: "Key", data: function (e) { return ` <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="${e.Name}">`} });
-    colunas.push({ title: "Value", data: function (e) { return ` <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="${e.Id}">`} });
-
-    let colunasConfig = [];
-    colunasConfig.push({ targets: [0, 1], orderable: false });
-    colunasConfig.push({ targets: [2, 3], orderable: false });
+    colunas.push({ title: "Key", data: function (e) { return `${e.Name}`} });
+    colunas.push({ title: "Value", data: function (e) { return `${e.Id}`} });
     
     table_Parameters = $('#table_Parameters').DataTable({
         ajax: {
@@ -88,7 +111,6 @@ function onclick_New() {
             contentType: "application/json; charset=utf-8"
         },
         columns: colunas,
-        columnDefs: colunasConfig,
         order: [],
         autoWidth: false,
         responsive: true,
@@ -110,6 +132,35 @@ function select_Load() {
         const optText = `${element.Name}`;
         const optValue = `${element.Id}`;
         $('#select_Merchant').append(`<option value="${optValue}">${optText}</option>`)
+        $('#select_MerchantModal').append(`<option value="${optValue}">${optText}</option>`)
+      });
+    },
+  });
+
+  $.ajax({
+    type: "GET",
+    url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/salesChannel`,
+    dataType: "json",
+    success : function (data) {
+      let response_Data = data;
+      response_Data.forEach(element => {
+        const optText = `${element.Name}`;
+        const optValue = `${element.Id}`;
+        $('#select_channel').append(`<option value="${optValue}">${optText}</option>`)
+      });
+    },
+  });
+
+  $.ajax({
+    type: "GET",
+    url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application`,
+    dataType: "json",
+    success : function (data) {
+      let response_Data = data;
+      response_Data.forEach(element => {
+        const optText = `${element.Name}`;
+        const optValue = `${element.Id}`;
+        $('#select_Application').append(`<option value="${optValue}">${optText}</option>`)
       });
     },
   });
@@ -169,9 +220,5 @@ function message_Show(state, merchant_Id) {
         timer: 1500
       })
     }
-}
-
-function table_Adjust() {
-  $('#table_Parameters').DataTable().columns.adjust();
 }
 // #endregion [ Methods ]
