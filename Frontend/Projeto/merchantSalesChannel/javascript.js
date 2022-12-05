@@ -1,48 +1,24 @@
 "use strict"    
 // #region [ Propy ]
-let table = null;
+let table_SalesChannel = null;
+let table_Parameters = null;
 let recent_Guide = null;
 
 // #endregion [ Propy ]
 // #region [ Events ]
 $(document).ready(function () {
   select_Load() 
-  let colunas = [];
-  colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_Edit('${e.Id}', '${e.Name}', ${e.IntegrationActivate})" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>` } });
-  colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` } });
-  colunas.push({ title: "Key", data: function (e) { return ` <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="${e.Name}">`} });
-  colunas.push({ title: "Value", data: function (e) { return ` <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="${e.Id}">`} });
-
-  let colunasConfig = [];
-  colunasConfig.push({ targets: [0, 1], orderable: false });
-  colunasConfig.push({ targets: [2, 3], orderable: false });
-
-  table = $('#table_Parameters').DataTable({
-      ajax: {
-          type: "GET",
-          dataType: "json",
-          url: "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant",
-          dataSrc: '',
-          contentType: "application/json; charset=utf-8"
-      },
-      columns: colunas,
-      columnDefs: colunasConfig,
-      order: [],
-      responsive: true,
-      searching: false,
-      lengthChange: false,
-  });
 
   $('#windowModal').on('hidden.bs.modal', function (e) {
-    $(this)
+    $('#form_Merchant')
       .find("input,textarea,select")
          .val('')
          .end();
-  
+    table_Parameters.destroy()
+    table_Parameters = null;
+
+      
   })
-  $(document).on('shown.bs.modal', function (e) {
-    $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
-});
 });
 // #endregion [ Methods ]
 function onclick_Edit(merchant_Id, Name, Active) {
@@ -53,8 +29,6 @@ function onclick_Edit(merchant_Id, Name, Active) {
     $('#success-outlined').prop("checked", true)
   else
   $('#danger-outlined').prop("checked", true)
-
-  recent_Guide = merchant_Id
 }
 
 function onclick_Save() {
@@ -91,6 +65,38 @@ function onclick_CopyGuide(merchant_Id) {
     message_Show("copy");
   }
 
+}
+
+function onclick_New() {
+  if(table_Parameters == null) {
+    let colunas = [];
+    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_Edit('${e.Id}', '${e.Name}', ${e.IntegrationActivate})" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>` } });
+    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` } });
+    colunas.push({ title: "Key", data: function (e) { return ` <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="${e.Name}">`} });
+    colunas.push({ title: "Value", data: function (e) { return ` <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="${e.Id}">`} });
+
+    let colunasConfig = [];
+    colunasConfig.push({ targets: [0, 1], orderable: false });
+    colunasConfig.push({ targets: [2, 3], orderable: false });
+    
+    table_Parameters = $('#table_Parameters').DataTable({
+        ajax: {
+            type: "GET",
+            dataType: "json",
+            url: "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant",
+            dataSrc: '',
+            contentType: "application/json; charset=utf-8"
+        },
+        columns: colunas,
+        columnDefs: colunasConfig,
+        order: [],
+        autoWidth: false,
+        responsive: true,
+        searching: false,
+        lengthChange: false,
+    });
+  }
+  $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
 }
 // #region [ Metodos ]
 function select_Load() {
