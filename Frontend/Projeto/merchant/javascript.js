@@ -7,15 +7,11 @@ let recent_Guide = null;
 // #region [ Eventos ]
 $(document).ready(function () {
     let colunas = [];
-    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_Edit('${e.Id}', '${e.Name}', ${e.IntegrationActivate})" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>` } });
-    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` } });
+    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_Edit('${e.Id}', '${e.Name}', ${e.IntegrationActivate})" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>` }, width: "5px" });
+    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` }, width: "5px" });
     colunas.push({ title: "Merchant Name", data: 'Name' });
-    colunas.push({ title: "ID", data: function (e) { return `${e.Id}<a href="#"><i class="fa fa-clone" aria-hidden="true" onclick="onclick_CopyGuide('${e.Id}')"></i></a>` } });
-    colunas.push({ title: "Integration Status", data: function (e) { return e.IntegrationActivate == true ? "<i class='text-success'>Actived</i>" : "<i class='text-danger'>Desactived</i>" } });
-
-    let colunasConfig = [];
-    colunasConfig.push({ targets: 0, width: "10", orderable: false });
-    colunasConfig.push({ targets: 1, width: "10", orderable: false });
+    colunas.push({ title: "ID", data: function (e) { return `${e.Id}<a href="#"><i class="fa fa-clone" aria-hidden="true" onclick="onclick_CopyGuide('${e.Id}')"></i></a>`} });
+    colunas.push({ title: "Integration Status", data: function (e) { return e.IntegrationActivate == true ? "<i class='text-success'>Actived</i>" : "<i class='text-danger'>Desactived</i>"} });
 
     table = $('#table').DataTable({
         ajax: {
@@ -26,7 +22,6 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8"
         },
         columns: colunas,
-        columnDefs: colunasConfig,
         order: [],
         responsive: true,
         lengthChange: false,
