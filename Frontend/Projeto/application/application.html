@@ -14,10 +14,10 @@
         <div class="header">
             <div class="side-nav">
                 <a href="#" class="logo">
-                    <img src="../assets/master/imgs/1619197719688.png" class="logo-img">
+                    <img src="/assets/master/imgs/1619197719688.png" class="logo-img">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="../application/application.html"><i class="fa-solid fa-database"></i><p>Application</p></a></li>
+                    <li><a href="application.html"><i class="fa-solid fa-database"></i><p>Application</p></a></li>
                     <li><a href="../merchant/merchant.html"><i class="fa-regular fa-building"></i><p>Merchants</p></a></li>
                     <li><a href="../merchantSalesChannel/merchant_Sales_Channel.html"><i class="fa fa-globe" aria-hidden="true"></i><p>Sales Channel</p></a></li>
                     <div class="active"></div>
@@ -27,7 +27,7 @@
         <div class="hero container-fluid mt-3">
             <div class="card section mb-3">
                 <div class="card-header">
-                    <h1 class="text-center">Merchants</h1>
+                    <h1 class="text-center">Application</h1>
                 </div>
             </div>
             <div class="card section">
@@ -40,37 +40,46 @@
         </div>
     </div>
     <div class="modal fade" id="windowModal" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header d-block">
                     <button type="button" class="btn btn-close float-right" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <h3 class="modal-title text-center">Merchant Settings</h3>
+                    <h3 class="modal-title text-center">Application</h3>
                 </div>
                 <div class="modal-body">
                     <form class="p-3 was-validated" id="form_Merchant">
-                        <div class="my-3 was-validated">
-                            <div class="input-group">
-                                <span class="input-group-text">Guide id</span>
-                                <input class="form-control" type="text" name="f_Guide" id="f_Guide" onclick="onclick_CopyGuide()" onkeydown="return false;">
-                            </div>
-                            <div class="form-floating mb-3 mt-3">
-                                <input class="form-control" type="text" name="f_MerchantName" id="f_MerchantName" placeholder="Merchant Name: " required>
-                                <label class="form-label" for="f_MerchantName">Merchant Name:</label>
-                            </div>
-                            <div class="my-3">
-                                <label class="form-label" for="f_Name">Integration Status:</label>
-                                <div>
-                                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked value="true">
-                                    <label class="btn btn-outline-success" for="success-outlined">Active</label>
-                                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off" value="false">
-                                    <label class="btn btn-outline-danger" for="danger-outlined">Inactive</label>
-                                </div>
-                            </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input_ID">ID:</label>
+                            <input type="text" class="form-control col-2 save" placeholder="ID" id="input_ID" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="input_Name">Name: </label>
+                            <input type="text" class="form-control col-6 save" placeholder="Name" id="input_Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="select_Channel">Sales Channel:</label>
+                            <select class="form-select col-6 save" id="select_Channel" required>
+                                <option value="" disabled selected>Select Channel</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-success" onclick="onclick_SaveNewApplication()">Save<i class="fa fa-check-circle-o ml-2" aria-hidden="true"></i></button>
                         </div>
                     </form>
+                    <div class="container mb-3 " id="content_Parameters" style="display: none;">
+                        <label for="" class="d-inline-block mr-2">Parameters</label>
+                            <form action="" class="form-inline was-validated mb-3" id="form_Parameters">
+                                <div>
+                                    <input type="text" class="form-control" placeholder="Key" id="key" required>
+                                    <input type="text" class="form-control" placeholder="Value" id="value" required>
+                                    <button type="button" class="btn btn-success" onclick="onclick_SaveParameter()">Add<i class="fa fa-plus-square-o ml-2" aria-hidden="true"></i></button>
+                                </div>
+                            </form>
+                        <table width="100%" class="table table-bordered table-striped  table-striped table-hover" id="table_Parameters">
+                        </table>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" data-bs-dimiss="modal" class="btn btn-success" aria-label="Close" form="form_Merchant" onclick="onclick_Save()">Save</button>
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -82,6 +91,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="javascript.js"></script>
-    
 </body>
 </html>

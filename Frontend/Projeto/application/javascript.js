@@ -1,27 +1,49 @@
+// #This is a Basic Structure of an JS File to compose this WebSite.
+
 "use strict"    
-// #region [ Propy ]
-let table_SalesChannel = null;
+// #region [ Propriedades ]
+let table_Application = null;
 let table_Parameters = null;
-// #endregion [ Propy ]
 
-// #region [ Events ]
+// #endregion [ Propriedades ]
+// #region [ Eventos ]
 $(document).ready(function () {
-  select_Load() 
+    let colunas = [];
+    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_DeleteApplication('${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` }, width: "10px"});
+    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_EditApplication('${e.Id}', '${e.Name}', '${e.SalesChannelId}')" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>`}, width: "5px" });
+    colunas.push({ title: "ID", data: 'Id' });
+    colunas.push({ title: "Application", data: 'Name' });
+    colunas.push({ title: "Sales Channel", data: 'SalesChannelName' });
 
-  $('#windowModal').on('hidden.bs.modal', function (e) {
-    $('#form_Merchant')
-      .find("input,textarea,select")
-         .val('')
-         .end();
-    $('#content_Parameters').hide();
-    $("select").attr('disabled', false);
-    $("input").attr('disabled', false);
+    table_Application = $('#table').DataTable({
+        ajax: {
+            type: "GET",
+            dataType: "json",
+            url: "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application",
+            dataSrc: '',
+            contentType: "application/json; charset=utf-8"
+        },
+        autoWidth: false,
+        columns: colunas,
+        order: [],
+        lengthChange: false,
+        dom: 'B l<"tabela-toolbar">frtip',
+        initComplete: function () {
+                $("#table_filter").append('<button type="button" class="btn btn-success col-7 mb-3" data-bs-toggle="modal" onclick="onclick_New()" data-bs-target="#windowModal">New</button>');
+        }
+    });
 
-    if(table_Parameters != null) {
-      table_Parameters.destroy();
-      table_Parameters = null;
-    }
-  })
+    $('#windowModal').on('hidden.bs.modal', function (e) {
+      $(this)
+        .find("input,textarea,select")
+           .val('')
+           .end();
+           $('#content_Parameters').hide();
+           $("select").attr('disabled', false);
+           $("input").attr('disabled', false); 
+           table_Parameters.destroy();
+           table_Parameters = null;
+    })
 });
 
 async function onclick_DeleteMerchantChannel(salesChannel_ID) {
@@ -48,47 +70,13 @@ async function onclick_DeleteParameter(merchant_ID, sales_ID,parameter_ID) {
   }
 }
 
-function onchange_MerchantChannel() {
-  if(table_SalesChannel != null)
-    table_SalesChannel.destroy();
-
-  let colunas = [];
-  colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_EditSalesChannel('${e.SalesChannelId}', '${e.ApplicationId}', '${e.ExternalId}')" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>`}, width: "5px" });
-  colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_DeleteMerchantChannel('${e.SalesChannelId}')"><i class="fa-solid fa-trash-can"></i></a>` }, width: "5px" });
-  colunas.push({ title: "Name", data: function (e) { return `${e.SalesChannel}`} });
-  colunas.push({ title: "External-ID", data: function (e) { return `${e.ExternalId}`} });
-  
-  table_SalesChannel = $('#table_SalesOptions').DataTable({
-      ajax: {
-          type: "GET",
-          dataType: "json",
-          url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${$('#select_Merchant').val()}/salesChannel`,
-          dataSrc: '',
-          contentType: "application/json; charset=utf-8"
-      },
-      columns: colunas,
-      order: [],
-      autoWidth: false,
-      responsive: true,
-      searching: false,
-      lengthChange: false,
-  });
-$.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
-}
-
-async function onclick_EditSalesChannel(channel_ID, application_ID, external_ID) {
+async function onclick_EditApplication(application_ID, application_Name, salesChannel_ID) {
   await onclick_New()
-  $('#windowModal').show();
-  $("#select_MerchantModal").val(`${$('#select_Merchant').val()}`).val();
-  $('#select_Channel').val(channel_ID);
-  $("#select_Application").val(application_ID);
-  $('#external_ID').val(external_ID)
-  $("#select_MerchantModal").attr('disabled', true);
-  $('#select_Channel').attr('disabled', true);
-  $('#select_Application').attr('disabled', true);
-  $('#external_ID').attr('disabled', true);
+  $("#input_ID").val(application_ID).attr('disabled', true);
+  $('#input_Name').val(application_Name)
+  $('#select_Channel').val(salesChannel_ID);
   $('#content_Parameters').show();
-  table_ParametersLoad(`${$('#select_Merchant').val()}`, channel_ID)
+  table_ParametersLoad(application_ID)
 }
 
 async function onclick_New() {
@@ -108,46 +96,30 @@ async function onclick_New() {
       },
     });
   }
-  if( $('#select_Application').has('option').length > 0 ) {
-    await $.ajax({
-      type: "GET",
-      url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application`,
-      dataType: "json",
-      success : function (data) {
-        let response_Data = data;
-        $('#select_Application').html('<option value="" disabled selected>Select The Merchant Channel</option>')
-        response_Data.forEach(element => {
-          const optText = `${element.Name}`;
-          const optValue = `${element.Id}`;
-          $('#select_Application').append(`<option value="${optValue}">${optText}</option>`)
-        });
-      },
-    });
-  }
   $('#windowModal').modal('show');
 }
 
-function onclick_SaveNewSalesChannel() {
-    $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${$('#select_MerchantModal').val()}/salesChannel`,
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({
-            SalesChannelId: $('#select_Channel').val(),
-            ExternalId: $('#external_ID').val(),
-            ApplicationId: $('#select_Application').val()
-        }),
-        success : () => (message_Show("success"), table_SalesChannel.ajax.reload(),$('#content_Parameters').show(),table_ParametersLoad($('#select_MerchantModal').val(),$('#select_Channel').val())),
-        error :  () => (message_Show("error")),
-    });
+function onclick_SaveNewApplication() {
+  $.ajax({
+    type: "POST",
+    dataType: "json",
+    url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application`,
+    contentType: "application/json; charset=utf-8",
+    data: JSON.stringify({
+      Id: $('#input_ID').val(),
+      Name: $('#input_Name').val(),
+      SalesChannelId: $('#select_Channel').val()                        
+    }),
+    success : () => (message_Show("success"),table_Application.ajax.reload(),$('#windowModal').find('.save').attr('disabled', true),$('#content_Parameters').show(), table_ParametersLoad($('#input_ID').val())),
+    error :  () => (message_Show("error")),
+  });
 }
 
 function onclick_SaveParameter() {
   $.ajax({
     type: "POST",
     dataType: "json",
-    url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${$('#select_MerchantModal').val()}/salesChannel/${$('#select_Channel').val()}/parameter`,
+    url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application/${$('#input_ID').val()}/parameter`,
     contentType: "application/json; charset=utf-8",
     data: JSON.stringify({
       Key: $('#key').val(),
@@ -158,6 +130,34 @@ function onclick_SaveParameter() {
 });
 }
 
+async function onclick_DeleteParameter(Application_ID, parameter_ID) {
+  const result = await message_Show("delete");
+  if(result == true) {
+    $.ajax({
+        type: "DELETE",
+        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application/${Application_ID}/parameter/${parameter_ID}`,
+        success : () => (message_Show('success'), table_Parameters.ajax.reload()),
+        error :  () => (message_Show('error')),
+    });
+  }
+}
+
+async function onclick_DeleteApplication(Application_ID) {
+  const result = await message_Show("delete");
+  if(result == true) {
+    $.ajax({
+        type: "DELETE",
+        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application/${Application_ID}`,
+        success : () => (message_Show('success'), table_Application.ajax.reload()),
+        error :  () => (message_Show('error')),
+    });
+  }
+}
+
+function onclick_Copy(Value) {
+  navigator.clipboard.writeText(Value);
+  message_Show("copy");
+}
 // #endregion [ Events ]
 // #region [ Metodos ]
 async function message_Show(state) {
@@ -232,19 +232,18 @@ function select_Load() {
   });
 }
 
-function table_ParametersLoad(merchant_ID, sales_ID) {
-  console.log(sales_ID)
+function table_ParametersLoad(application_ID) {
   if(table_Parameters == null) {
     let colunas = [];
-    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_DeleteParameter('${merchant_ID}','${sales_ID}','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` }, width: "10px"});
+    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_DeleteParameter('${application_ID}','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` }, width: "10px"});
     colunas.push({ title: "Key", data: function (e) { return `${e.Key}`} });
-    colunas.push({ title: "Value", data: function (e) { return `${e.Value}`} });
+    colunas.push({ title: "Value", data: function (e) { return `<input type="text" class="form-control col-10 d-inline-block input_Parameter" placeholder="Name" id="input_Name" value='${e.Value}' disabled><a href="#" class="col-1"><i class="fa fa-clone" onclick="onclick_Copy('${e.Value}')"></i></a>`} });
   
     table_Parameters = $('#table_Parameters').DataTable({
         ajax: {
             type: "GET",
             dataType: "json",
-            url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${merchant_ID}/salesChannel/${sales_ID}/parameter`,
+            url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application/${application_ID}/parameter`,
             dataSrc: '',
             contentType: "application/json; charset=utf-8"
         },
@@ -258,8 +257,8 @@ function table_ParametersLoad(merchant_ID, sales_ID) {
   }
   $('#key').val('')
   $('#value').val('')
-  table_Parameters.ajax.reload()
   $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
 
 }
+
 // #endregion [ Methods ]

@@ -17,9 +17,9 @@
                     <img src="../assets/master/imgs/1619197719688.png" class="logo-img">
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#"><i class="fa-solid fa-database"></i><p>Application</p></a></li>
+                    <li><a href="../../application/application.html"><i class="fa-solid fa-database"></i><p>Application</p></a></li>
                     <li><a href="../merchant/merchant.html"><i class="fa-regular fa-building"></i><p>Merchants</p></a></li>
-                    <li><a href="../merchant/merchant.html"><i class="fa fa-globe" aria-hidden="true"></i><p>Sales Channel</p></a></li>
+                    <li><a href="../merchantSalesChannel/merchant_Sales_Channel.html"><i class="fa fa-globe" aria-hidden="true"></i><p>Sales Channel</p></a></li>
                     <div class="active"></div>
                 </ul>
             </div>
@@ -36,11 +36,11 @@
                         <div class="row mb-3">
                           <div class="col-5">
                             <select class="form-select col-12" id="select_Merchant" onchange="onchange_MerchantChannel()">
-                                <option value="" disabled selected>Select The Merchant Channel</option>
+                                <option value="" disabled selected>Select Merchant</option>
                             </select>
                           </div>
                           <div class="col-3 offset-4 row justify-content-end">
-                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#windowModal">New<i class="fa fa-plus-square-o ml-2" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-success" onclick="onclick_New()">New<i class="fa fa-plus-square-o ml-2" aria-hidden="true"></i></button>
                           </div>
                         </div>
                         <table class="table table-bordered table-striped  table-striped table-hover" id="table_SalesOptions">
@@ -73,7 +73,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="external_ID">External Id:</label>
-                            <input type="text" class="form-control col-6" placeholder="Username" id="external_ID">
+                            <input type="text" class="form-control col-6" placeholder="External ID" id="external_ID">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" for="select_Application">Application:</label>
