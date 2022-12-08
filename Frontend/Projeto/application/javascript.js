@@ -27,10 +27,7 @@ $(document).ready(function () {
         columns: colunas,
         order: [],
         lengthChange: false,
-        dom: 'B l<"tabela-toolbar">frtip',
-        initComplete: function () {
-                $("#table_filter").append('<button type="button" class="btn btn-success col-7 mb-3" data-bs-toggle="modal" onclick="onclick_New()" data-bs-target="#windowModal">New</button>');
-        }
+        dom: '<"toolbar">trip',
     });
 
     $('#windowModal').on('hidden.bs.modal', function (e) {
@@ -44,31 +41,16 @@ $(document).ready(function () {
            table_Parameters.destroy();
            table_Parameters = null;
     })
+    $('div.toolbar').html(`
+    <div class='d-flex justify-content-end align-items-center'>
+      <div class='d-inline-block'>
+        <label>Search</label>
+        <input onkeydown="onclick_Search()" id='filter_Search'/>
+      </div>
+      <button type="button" class="btn btn-success col-3 ml-3 mb-3 d-inline-block" data-bs-toggle="modal" onclick="onclick_New()" data-bs-target="#windowModal">New</button>
+    </div>
+    `);
 });
-
-async function onclick_DeleteMerchantChannel(salesChannel_ID) {
-  const result = await message_Show("delete");
-  if(result == true) {
-    $.ajax({
-        type: "DELETE",
-        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${$('#select_Merchant').val()}/salesChannel/${salesChannel_ID}`,
-        success : () => (message_Show('success'), table_SalesChannel.ajax.reload()),
-        error :  () => (message_Show('error')),
-    });
-  }
-}
-
-async function onclick_DeleteParameter(merchant_ID, sales_ID,parameter_ID) {
-  const result = await message_Show("delete");
-  if(result == true) {
-    $.ajax({
-        type: "DELETE",
-        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${merchant_ID}/salesChannel/${sales_ID}/parameter/${parameter_ID}`,
-        success : () => (message_Show('success'), table_Parameters.ajax.reload()),
-        error :  () => (message_Show('error')),
-    });
-  }
-}
 
 async function onclick_EditApplication(application_ID, application_Name, salesChannel_ID) {
   await onclick_New()
@@ -77,6 +59,30 @@ async function onclick_EditApplication(application_ID, application_Name, salesCh
   $('#select_Channel').val(salesChannel_ID);
   $('#content_Parameters').show();
   table_ParametersLoad(application_ID)
+}
+
+async function onclick_DeleteApplication(Application_ID) {
+  const result = await message_Show("delete");
+  if(result == true) {
+    $.ajax({
+        type: "DELETE",
+        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application/${Application_ID}`,
+        success : () => (message_Show('success'), table_Application.ajax.reload()),
+        error :  () => (message_Show('error')),
+    });
+  }
+}
+
+async function onclick_DeleteParameter(Application_ID, parameter_ID) {
+  const result = await message_Show("delete");
+  if(result == true) {
+    $.ajax({
+        type: "DELETE",
+        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application/${Application_ID}/parameter/${parameter_ID}`,
+        success : () => (message_Show('success'), table_Parameters.ajax.reload()),
+        error :  () => (message_Show('error')),
+    });
+  }
 }
 
 async function onclick_New() {
@@ -97,6 +103,11 @@ async function onclick_New() {
     });
   }
   $('#windowModal').modal('show');
+}
+
+function onclick_Copy(Value) {
+  navigator.clipboard.writeText(Value);
+  message_Show("copy");
 }
 
 function onclick_SaveNewApplication() {
@@ -130,34 +141,6 @@ function onclick_SaveParameter() {
 });
 }
 
-async function onclick_DeleteParameter(Application_ID, parameter_ID) {
-  const result = await message_Show("delete");
-  if(result == true) {
-    $.ajax({
-        type: "DELETE",
-        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application/${Application_ID}/parameter/${parameter_ID}`,
-        success : () => (message_Show('success'), table_Parameters.ajax.reload()),
-        error :  () => (message_Show('error')),
-    });
-  }
-}
-
-async function onclick_DeleteApplication(Application_ID) {
-  const result = await message_Show("delete");
-  if(result == true) {
-    $.ajax({
-        type: "DELETE",
-        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application/${Application_ID}`,
-        success : () => (message_Show('success'), table_Application.ajax.reload()),
-        error :  () => (message_Show('error')),
-    });
-  }
-}
-
-function onclick_Copy(Value) {
-  navigator.clipboard.writeText(Value);
-  message_Show("copy");
-}
 // #endregion [ Events ]
 // #region [ Metodos ]
 async function message_Show(state) {

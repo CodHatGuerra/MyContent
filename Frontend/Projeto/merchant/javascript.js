@@ -24,11 +24,9 @@ $(document).ready(function () {
         columns: colunas,
         order: [],
         responsive: true,
+        searching: true,
         lengthChange: false,
-        dom: 'B l<"tabela-toolbar">frtip',
-        initComplete: function () {
-                $("#table_filter").append('<button type="button" class="btn btn-success col-7 mb-3" data-bs-toggle="modal" onclick="new_GuideModal()" data-bs-target="#windowModal">New</button>');
-        }
+        dom: '<"toolbar">trip',
     });
 
     $('#windowModal').on('hidden.bs.modal', function (e) {
@@ -38,6 +36,15 @@ $(document).ready(function () {
            .end();
     
     })
+    $('div.toolbar').html(`
+    <div class='d-flex justify-content-end align-items-center'>
+      <div class='d-inline-block'>
+        <label>Search</label>
+        <input onkeydown="onclick_Search()" id='filter_Search'/>
+      </div>
+      <button type="button" class="btn btn-success col-3 ml-3 mb-3 d-inline-block" data-bs-toggle="modal" onclick="new_GuideModal()" data-bs-target="#windowModal">New</button>
+    </div>
+    `);
 });
 // #endregion [ Eventos ]
 function onclick_Edit(merchant_Id, Name, Active) {
@@ -66,6 +73,10 @@ function onclick_Save() {
         success : () => (message_Show("success") , $('#windowModal').modal('toggle'), table.ajax.reload(), recent_Guide = null),
         error :  () => (message_Show("error")),
     });
+}
+
+function onclick_Search() {
+  table.search($('#filter_Search').val()).draw();
 }
 
 function onclick_Delete(merchant_Id) {
