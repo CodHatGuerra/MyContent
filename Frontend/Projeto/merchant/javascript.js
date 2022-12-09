@@ -1,10 +1,9 @@
 "use strict"    
-// #region [ Propriedades ]
+// #region [ Propy ]
 let table = null;
 let recent_Guide = null;
-
-// #endregion [ Propriedades ]
-// #region [ Eventos ]
+// #endregion [ Propy ]
+// #region [ Events ]
 $(document).ready(function () {
     let colunas = [];
     colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_Edit('${e.Id}', '${e.Name}', ${e.IntegrationActivate})" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>` }, width: "5px" });
@@ -46,7 +45,7 @@ $(document).ready(function () {
     </div>
     `);
 });
-// #endregion [ Eventos ]
+
 function onclick_Edit(merchant_Id, Name, Active) {
   $('#f_Guide').val(merchant_Id)
   $('#f_MerchantName').val(Name)
@@ -98,7 +97,8 @@ function onclick_CopyGuide(merchant_Id) {
   }
 
 }
-// #region [ Metodos ]
+// #endregion [ Events ]
+// #region [ Methods ]
 function guide_Generator() {
     return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
     (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
@@ -164,4 +164,4 @@ function message_Show(state, merchant_Id) {
       })
     }
 }
-// #endregion [ Metodos ]
+// #endregion [ Methods ]

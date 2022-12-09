@@ -3,7 +3,6 @@
 let table_SalesChannel = null;
 let table_Parameters = null;
 // #endregion [ Propy ]
-
 // #region [ Events ]
 $(document).ready(function () {
   select_Load() 
@@ -157,7 +156,6 @@ function onclick_SaveParameter() {
     error :  () => (message_Show("error")),
 });
 }
-
 // #endregion [ Events ]
 // #region [ Metodos ]
 async function message_Show(state) {

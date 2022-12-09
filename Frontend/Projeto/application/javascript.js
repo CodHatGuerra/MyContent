@@ -1,12 +1,10 @@
-// #This is a Basic Structure of an JS File to compose this WebSite.
-
 "use strict"    
-// #region [ Propriedades ]
+// #region [ Propy ]
 let table_Application = null;
 let table_Parameters = null;
 
-// #endregion [ Propriedades ]
-// #region [ Eventos ]
+// #endregion [ Propy ]
+// #region [ Events ]
 $(document).ready(function () {
     let colunas = [];
     colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_DeleteApplication('${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` }, width: "10px"});
@@ -141,8 +139,11 @@ function onclick_SaveParameter() {
 });
 }
 
+function onclick_Search() {
+  table.search($('#filter_Search').val()).draw();
+}
 // #endregion [ Events ]
-// #region [ Metodos ]
+// #region [ Methods ]
 async function message_Show(state) {
   let result = false;
   if (state === "success") {
@@ -243,5 +244,4 @@ function table_ParametersLoad(application_ID) {
   $.fn.dataTable.tables( {visible: true, api: true} ).columns.adjust();
 
 }
-
 // #endregion [ Methods ]
