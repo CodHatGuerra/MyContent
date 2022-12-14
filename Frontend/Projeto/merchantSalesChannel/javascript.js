@@ -5,6 +5,9 @@ let table_Parameters = null;
 // #endregion [ Propy ]
 // #region [ Events ]
 $(document).ready(function () {
+  if(moment(moment().format()).isAfter(localStorage.getItem('data_TokenExpire')))
+  window.location.href = "../index.html";
+
   select_Load() 
 
   $('#windowModal').on('hidden.bs.modal', function (e) {

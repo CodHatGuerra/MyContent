@@ -6,6 +6,9 @@ let table_Parameters = null;
 // #endregion [ Propy ]
 // #region [ Events ]
 $(document).ready(function () {
+  if(moment(moment().format()).isAfter(localStorage.getItem('data_TokenExpire')))
+  window.location.href = "../index.html";
+  
     let colunas = [];
     colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_DeleteApplication('${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` }, width: "10px"});
     colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_EditApplication('${e.Id}', '${e.Name}', '${e.SalesChannelId}')" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>`}, width: "5px" });

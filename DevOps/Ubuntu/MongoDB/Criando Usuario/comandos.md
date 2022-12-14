@@ -5,11 +5,15 @@
 use admin
 db.createUser(
 {
-user: "Admin",
-pwd: "myNewPassword",
-roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
-}
-)
+    user: "Admin",
+    pwd: "myNewPassword",
+    roles: [
+              { role: "userAdminAnyDatabase", db: "admin" },
+              { role: "readWriteAnyDatabase", db: "admin" },
+              { role: "dbAdminAnyDatabase", db: "admin" },
+              { role: "clusterAdmin", db: "admin" }
+           ]
+})
 ```
 #### 3. logo apos o comando inserido vc terá uma msg escrita com SUCESSO, próximo passo é Habilitar a autenticação no *mongod.conf*, se encontra no repositório /etc/mongod.conf, edite ele e altera a linha `#security`
 ```js

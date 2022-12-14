@@ -8,6 +8,9 @@ let recent_Guide = null;
 // #endregion [ Propriedades ]
 // #region [ Eventos ]
 $(document).ready(function () {
+  if(moment(moment().format()).isAfter(localStorage.getItem('data_TokenExpire')))
+  window.location.href = "../index.html";
+  
     let colunas = [];
     colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_Edit('${e.Id}', '${e.Name}', ${e.IntegrationActivate})" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>` } });
     colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` } });
