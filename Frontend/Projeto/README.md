@@ -14,6 +14,7 @@
 - ## [`FontAwesome`](https://fontawesome.com/v4/)
 - ## [`sweetallert 2`](https://sweetalert2.github.io/)
 - ## [`Datatables`](https://datatables.net/manual/)
+- ## [`MomentJS`](https://momentjs.com/)
 ***
 ### Global CSS
 #### on the folder `assets/master` <-- contains a master example of project, and the master CSS archive, and this archive controll the all pages Heades style, the project is fully Bootstrap Html based with; `Containers, Cols`

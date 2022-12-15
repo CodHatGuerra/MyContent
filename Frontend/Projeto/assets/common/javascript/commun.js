@@ -1,5 +1,4 @@
 
-
 async function onclick_Login() {
     $.ajax({
         type: "POST",
@@ -14,7 +13,7 @@ async function onclick_Login() {
         success : (data) => {
             localStorage.clear();
             localStorage.setItem('acess_Token', data.Data.AccessToken);
-            localStorage.setItem('data_TokenExpire', moment(moment().format()).add(60, 's').toDate());
+            localStorage.setItem('data_TokenExpire', moment(new Date()).add(data.Data.Expires, 's').toDate());
             message_Show("success")
         },
         error :  () => (message_Show("error")),

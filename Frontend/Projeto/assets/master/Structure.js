@@ -8,7 +8,7 @@ let recent_Guide = null;
 // #endregion [ Propriedades ]
 // #region [ Eventos ]
 $(document).ready(function () {
-  if(moment(moment().format()).isAfter(localStorage.getItem('data_TokenExpire')))
+  if(moment(new Date().toISOString()).isAfter(moment(localStorage.getItem('data_TokenExpire').toISOString)))
   window.location.href = "../index.html";
   
     let colunas = [];

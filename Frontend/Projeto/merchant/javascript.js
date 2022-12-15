@@ -5,7 +5,7 @@ let recent_Guide = null;
 // #endregion [ Propy ]
 // #region [ Events ]
 $(document).ready(function () {
-  if(moment(moment().format()).isAfter(localStorage.getItem('data_TokenExpire')))
+  if(moment(moment()).isAfter(new Date(localStorage.getItem('data_TokenExpire'))))
   window.location.href = "../index.html";
   
     let colunas = [];
