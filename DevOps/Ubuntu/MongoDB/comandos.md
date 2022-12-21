@@ -9,4 +9,4 @@
 #### 4. `sudo apt-get install -y mongodb-org=4.4.11 mongodb-org-server=4.4.11 mongodb-org-shell=4.4.11 mongodb-org-mongos=4.4.11 mongodb-org-tools=4.4.11`
 #### 5. `sudo systemctl start mongod`
 #### 6. `sudo systemctl status mongod`
-#### 7. Não esqueça de dar Bind no ip para 0.0.0.0 no arquivo */etc/mongodb.conf* na linha `bindIp: 0.0.0.0`
+#### 7. Não esqueça de dar Bind no ip para 0.0.0.0 no arquivo */etc/mongod.conf* na linha `bindIp: 0.0.0.0`

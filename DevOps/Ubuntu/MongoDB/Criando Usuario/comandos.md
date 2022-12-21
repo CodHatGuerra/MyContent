@@ -20,4 +20,15 @@ db.createUser(
  security:
     authorization: enabled
 ```
-####4. após salvar, execute os seguintes comandos; `systemctl daemon-reload`, `systemctl restart mongod`, e verefique o estado do serviço -> `systemctl status mongod`, caso o serviço ja estiver ativo rodando, Sucesso, sua autenticação está ativa.
+#### 4. após salvar, execute os seguintes comandos; `systemctl daemon-reload`, `systemctl restart mongod`, e verefique o estado do serviço -> `systemctl status mongod`, caso o serviço ja estiver ativo rodando, Sucesso, sua autenticação está ativa.
+
+#### 5. Criando uma *Database*
+```js
+use nomedb
+db.nomedb.insert({nome: "Ada Lovelace", idade: 205})
+```
+#### o resultado sendo 
+```js
+WriteResult({{"nInserted" : 1 })
+```
+#### Siguinifica que a inserção no banco foi correta
