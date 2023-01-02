@@ -12,3 +12,5 @@
 
 ### Reinicie o computador.
 
+## Atenção, não equecer de ativar o Módo Promiscuo Na rede avançada do VirtualBox !
+
