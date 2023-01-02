@@ -19,7 +19,7 @@ $(document).ready(function () {
         ajax: {
             type: "GET",
             dataType: "json",
-            url: "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant",
+            url: "https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant",
             dataSrc: '',
             contentType: "application/json; charset=utf-8"
         },
@@ -65,7 +65,7 @@ function onclick_Save() {
     $.ajax({
         type: recent_Guide != null ? "PUT" : "POST",
         dataType: "json",
-        url: recent_Guide != null ? `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${recent_Guide}` : "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant",
+        url: recent_Guide != null ? `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant/${recent_Guide}` : "https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             Id: recent_Guide != null ? "" : $('#f_Guide').val(),
@@ -84,7 +84,7 @@ function onclick_Search() {
 function onclick_Delete(merchant_Id) {
     $.ajax({
         type: "DELETE",
-        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${merchant_Id}`,
+        url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant/${merchant_Id}`,
         success : () => (message_Show('success'), table.ajax.reload()),
         error :  () => (message_Show('error')),
     });

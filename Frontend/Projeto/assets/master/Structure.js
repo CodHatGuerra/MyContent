@@ -26,7 +26,7 @@ $(document).ready(function () {
         ajax: {
             type: "GET",
             dataType: "json",
-            url: "https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant",
+            url: "https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant",
             dataSrc: '',
             contentType: "application/json; charset=utf-8"
         },

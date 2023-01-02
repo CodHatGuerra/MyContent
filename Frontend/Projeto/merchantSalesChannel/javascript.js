@@ -31,7 +31,7 @@ async function onclick_DeleteMerchantChannel(salesChannel_ID) {
   if(result == true) {
     $.ajax({
         type: "DELETE",
-        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${$('#select_Merchant').val()}/salesChannel/${salesChannel_ID}`,
+        url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant/${$('#select_Merchant').val()}/salesChannel/${salesChannel_ID}`,
         success : () => (message_Show('success'), table_SalesChannel.ajax.reload()),
         error :  () => (message_Show('error')),
     });
@@ -43,7 +43,7 @@ async function onclick_DeleteParameter(merchant_ID, sales_ID,parameter_ID) {
   if(result == true) {
     $.ajax({
         type: "DELETE",
-        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${merchant_ID}/salesChannel/${sales_ID}/parameter/${parameter_ID}`,
+        url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant/${merchant_ID}/salesChannel/${sales_ID}/parameter/${parameter_ID}`,
         success : () => (message_Show('success'), table_Parameters.ajax.reload()),
         error :  () => (message_Show('error')),
     });
@@ -64,7 +64,7 @@ function onchange_MerchantChannel() {
       ajax: {
           type: "GET",
           dataType: "json",
-          url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${$('#select_Merchant').val()}/salesChannel`,
+          url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant/${$('#select_Merchant').val()}/salesChannel`,
           dataSrc: '',
           contentType: "application/json; charset=utf-8"
       },
@@ -97,7 +97,7 @@ async function onclick_New() {
   if( $('#select_Channel').has('option').length > 0 ) {
     await $.ajax({
       type: "GET",
-      url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/salesChannel`,
+      url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/salesChannel`,
       dataType: "json",
       success : function (data) {
         let response_Data = data;
@@ -113,7 +113,7 @@ async function onclick_New() {
   if( $('#select_Application').has('option').length > 0 ) {
     await $.ajax({
       type: "GET",
-      url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/application`,
+      url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/application`,
       dataType: "json",
       success : function (data) {
         let response_Data = data;
@@ -133,7 +133,7 @@ function onclick_SaveNewSalesChannel() {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${$('#select_MerchantModal').val()}/salesChannel`,
+        url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant/${$('#select_MerchantModal').val()}/salesChannel`,
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             SalesChannelId: $('#select_Channel').val(),
@@ -149,7 +149,7 @@ function onclick_SaveParameter() {
   $.ajax({
     type: "POST",
     dataType: "json",
-    url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${$('#select_MerchantModal').val()}/salesChannel/${$('#select_Channel').val()}/parameter`,
+    url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant/${$('#select_MerchantModal').val()}/salesChannel/${$('#select_Channel').val()}/parameter`,
     contentType: "application/json; charset=utf-8",
     data: JSON.stringify({
       Key: $('#key').val(),
@@ -219,7 +219,7 @@ async function message_Show(state) {
 function select_Load() {
   $.ajax({
     type: "GET",
-    url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant`,
+    url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant`,
     dataType: "json",
     success : function (data) {
       let response_Data = data;
@@ -245,7 +245,7 @@ function table_ParametersLoad(merchant_ID, sales_ID) {
         ajax: {
             type: "GET",
             dataType: "json",
-            url: `https://inlivehomologacao.ddns.net/delivery-gateway-api/api/merchant/${merchant_ID}/salesChannel/${sales_ID}/parameter`,
+            url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant/${merchant_ID}/salesChannel/${sales_ID}/parameter`,
             dataSrc: '',
             contentType: "application/json; charset=utf-8"
         },
