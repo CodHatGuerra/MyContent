@@ -2,7 +2,6 @@
 // #region [ Propy ]
 let table_Application = null;
 let table_Parameters = null;
-
 // #endregion [ Propy ]
 // #region [ Events ]
 $(document).ready(function () {
@@ -39,8 +38,12 @@ $(document).ready(function () {
            $('#content_Parameters').hide();
            $("select").attr('disabled', false);
            $("input").attr('disabled', false); 
-           table_Parameters.destroy();
-           table_Parameters = null;
+           $('#div_ID').hide();
+           $('#btn_Save').attr('disabled', false);
+           if(table_Parameters != null) {
+            table_Parameters.destroy();
+            table_Parameters = null;
+          }
     })
     $('div.toolbar').html(`
     <div class='d-flex justify-content-end align-items-center'>
@@ -59,6 +62,7 @@ async function onclick_EditApplication(application_ID, application_Name, salesCh
   $('#input_Name').val(application_Name)
   $('#select_Channel').val(salesChannel_ID);
   $('#content_Parameters').show();
+  $('#div_ID').show();
   table_ParametersLoad(application_ID)
 }
 
@@ -104,6 +108,7 @@ async function onclick_New() {
     });
   }
   $('#windowModal').modal('show');
+  $('#div_ID').hide();
 }
 
 function onclick_Copy(Value) {
@@ -122,7 +127,7 @@ function onclick_SaveNewApplication() {
       Name: $('#input_Name').val(),
       SalesChannelId: $('#select_Channel').val()                        
     }),
-    success : () => (message_Show("success"),table_Application.ajax.reload(),$('#windowModal').find('.save').attr('disabled', true),$('#content_Parameters').show(), table_ParametersLoad($('#input_ID').val())),
+    success : () => (message_Show("success"),table_Application.ajax.reload(),$('#windowModal').find('.save').attr('disabled', true),$("#windowModal").modal('hide')),
     error :  () => (message_Show("error")),
   });
 }
