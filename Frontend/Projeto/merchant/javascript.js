@@ -5,12 +5,12 @@ let recent_Guide = null;
 // #endregion [ Propy ]
 // #region [ Events ]
 $(document).ready(function () {
-  if(moment(moment()).isAfter(new Date(localStorage.getItem('data_TokenExpire'))))
+  if(moment(moment()).isAfter(new Date(sessionStorage.getItem('data_TokenExpire'))))
   window.location.href = "../index.html";
   
     let colunas = [];
     colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="onclick_Edit('${e.Id}', '${e.Name}', ${e.IntegrationActivate})" data-bs-toggle="modal" data-bs-target="#windowModal"><i class="fa-solid fa-pencil text-danger"></i></a>` }, width: "5px" });
-    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` }, width: "5px" });
+    colunas.push({ title: "", data: function (e) { return `<a href="#" onclick="message_Show('delete','${e.Id}')"><i class="fa-solid fa-trash-can"></i></a>` }, width: "5px"});
     colunas.push({ title: "Merchant Name", data: 'Name' });
     colunas.push({ title: "ID", data: function (e) { return `${e.Id}<a href="#"><i class="fa fa-clone" aria-hidden="true" onclick="onclick_CopyGuide('${e.Id}')"></i></a>`} });
     colunas.push({ title: "Integration Status", data: function (e) { return e.IntegrationActivate == true ? "<i class='text-success'>Actived</i>" : "<i class='text-danger'>Desactived</i>"} });
@@ -36,8 +36,8 @@ $(document).ready(function () {
         .find("input,textarea,select")
            .val('')
            .end();
-    
     })
+    
     $('div.toolbar').html(`
     <div class='d-flex justify-content-end align-items-center'>
       <div class='d-inline-block'>
@@ -52,7 +52,6 @@ $(document).ready(function () {
 function onclick_Edit(merchant_Id, Name, Active) {
   $('#f_Guide').val(merchant_Id)
   $('#f_MerchantName').val(Name)
-
   if(Active)
     $('#success-outlined').prop("checked", true)
   else
