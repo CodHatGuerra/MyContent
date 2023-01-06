@@ -3,7 +3,7 @@ async function onclick_Login() {
     $.ajax({
         type: "POST",
         dataType: "json",
-        url: `https://inlivehomologacao.ddns.net/api/api/v1/portal/autenticacao/login`,
+        url: `${URL}/api/api/v1/portal/autenticacao/login`,
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
             CodigoAplicacao: 1,

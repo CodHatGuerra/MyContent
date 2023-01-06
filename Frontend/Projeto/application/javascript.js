@@ -19,7 +19,7 @@ $(document).ready(function () {
         ajax: {
             type: "GET",
             dataType: "json",
-            url: "https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/application",
+            url: `${URL}/delivery-gateway-api/api/application`,
             dataSrc: '',
             contentType: "application/json; charset=utf-8"
         },
@@ -71,7 +71,7 @@ async function onclick_DeleteApplication(Application_ID) {
   if(result == true) {
     $.ajax({
         type: "DELETE",
-        url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/application/${Application_ID}`,
+        url: `${URL}/delivery-gateway-api/api/application/${Application_ID}`,
         success : () => (message_Show('success'), table_Application.ajax.reload()),
         error :  () => (message_Show('error')),
     });
@@ -83,7 +83,7 @@ async function onclick_DeleteParameter(Application_ID, parameter_ID) {
   if(result == true) {
     $.ajax({
         type: "DELETE",
-        url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/application/${Application_ID}/parameter/${parameter_ID}`,
+        url: `${URL}/delivery-gateway-api/api/application/${Application_ID}/parameter/${parameter_ID}`,
         success : () => (message_Show('success'), table_Parameters.ajax.reload()),
         error :  () => (message_Show('error')),
     });
@@ -94,7 +94,7 @@ async function onclick_New() {
   if( $('#select_Channel').has('option').length > 0 ) {
     await $.ajax({
       type: "GET",
-      url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/salesChannel`,
+      url: `${URL}/delivery-gateway-api/api/salesChannel`,
       dataType: "json",
       success : function (data) {
         let response_Data = data;
@@ -120,7 +120,7 @@ function onclick_SaveNewApplication() {
   $.ajax({
     type: "POST",
     dataType: "json",
-    url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/application`,
+    url: `${URL}/delivery-gateway-api/api/application`,
     contentType: "application/json; charset=utf-8",
     data: JSON.stringify({
       Id: $('#input_ID').val(),
@@ -136,7 +136,7 @@ function onclick_SaveParameter() {
   $.ajax({
     type: "POST",
     dataType: "json",
-    url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/application/${$('#input_ID').val()}/parameter`,
+    url: `${URL}/delivery-gateway-api/api/application/${$('#input_ID').val()}/parameter`,
     contentType: "application/json; charset=utf-8",
     data: JSON.stringify({
       Key: $('#key').val(),
@@ -210,7 +210,7 @@ async function message_Show(state) {
 function select_Load() {
   $.ajax({
     type: "GET",
-    url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/merchant`,
+    url: `${URL}/delivery-gateway-api/api/merchant`,
     dataType: "json",
     success : function (data) {
       let response_Data = data;
@@ -235,7 +235,7 @@ function table_ParametersLoad(application_ID) {
         ajax: {
             type: "GET",
             dataType: "json",
-            url: `https://inlivedesenvolvimento.ddns.net/delivery-gateway-api/api/application/${application_ID}/parameter`,
+            url: `${URL}/delivery-gateway-api/api/application/${application_ID}/parameter`,
             dataSrc: '',
             contentType: "application/json; charset=utf-8"
         },

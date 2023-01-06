@@ -108,11 +108,15 @@ body, html {
 }
 
 .nav-links li:nth-child(2):hover ~ .active {
-    top: 33.33%;
+    top: 25%;
 } 
 
 .nav-links li:nth-child(3):hover ~ .active {
-    top: 66.66%;
+    top: 50%;
+} 
+
+.nav-links li:nth-child(4):hover ~ .active {
+    top: 75%;
 } 
 
 
