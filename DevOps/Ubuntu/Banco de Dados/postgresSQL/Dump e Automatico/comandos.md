@@ -6,3 +6,6 @@
 
 ### Restaurando pg_dumpall
 * #### Execute o comando para executar uma restauração total de banco `psql -f [db_backup.sql]`
+
+#### Lembrando que para Redirecionar o BACKUP o usuario postgres devera ter a permissão do local do diretório, assim como
+### `sudo chmod a+rwx /diretorio/backup`
