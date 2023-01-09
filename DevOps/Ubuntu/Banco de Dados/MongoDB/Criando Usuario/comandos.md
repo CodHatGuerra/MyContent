@@ -1,5 +1,5 @@
 #### 1. entre no MongoDB via terminal
-#### `mongo --port 27015`
+#### `mongo --port 27017`
 #### 2. utilize os seguintes comandos para adicionar um novo usuario no cargo ADM, utilize *user* como nome do usuario, *pwd* senha
 ```js
 use admin
@@ -21,7 +21,11 @@ db.createUser(
     authorization: enabled
 ```
 #### 4. após salvar, execute os seguintes comandos; `systemctl daemon-reload`, `systemctl restart mongod`, e verefique o estado do serviço -> `systemctl status mongod`, caso o serviço ja estiver ativo rodando, Sucesso, sua autenticação está ativa.
-
+---
+#### Autenticando Login
+##### Lembrando que para authenticar o login antes devera selecionar a base de dados para autenticação, por exemplo `use admin`
+#### `db.auth("UserName", "Pass")`
+---
 #### 5. Criando uma *Database*
 ```js
 use nomedb

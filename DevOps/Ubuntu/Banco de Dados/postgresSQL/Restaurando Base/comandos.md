@@ -1,0 +1,1 @@
+#### Para restaurar a base de dados Devera ser executado o seguinte comando `psql dbname < arquivo`
