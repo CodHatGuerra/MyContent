@@ -11,5 +11,4 @@ mongodump --db "NomeBanco"
 ### Comando para Restaurar a base de dados
 ```js
 mongorestore --authenticationDatabase admin --username Admin --password 123456 --db "nome" --dir user.bson
-
 ```

@@ -55,5 +55,6 @@ FILENAME1="deliverygateway_dev.bak"
 FILENAME2="deliverygateway_qa.bak"
 
 # Upload the file to the FTP server
-curl -T "{${SOURCE_DIR}/${FILENAME1},${SOURCE_DIR}/${FILENAME2}}" ftp://$USERNAME:$PASSWORD@>
+curl -T "{${SOURCE_DIR}/${FILENAME1},${SOURCE_DIR}/${FILENAME2}}" ftp://$USERNAME:$PASSWORD@$FTP_SERVER/$DEST_DIR
+
 ```

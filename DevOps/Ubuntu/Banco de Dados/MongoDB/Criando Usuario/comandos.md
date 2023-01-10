@@ -22,11 +22,11 @@ db.createUser(
 ```
 #### 4. após salvar, execute os seguintes comandos; `systemctl daemon-reload`, `systemctl restart mongod`, e verefique o estado do serviço -> `systemctl status mongod`, caso o serviço ja estiver ativo rodando, Sucesso, sua autenticação está ativa.
 ---
-#### Autenticando Login
-##### Lembrando que para authenticar o login antes devera selecionar a base de dados para autenticação, por exemplo `use admin`
+#### 5. Autenticando Login
+##### Lembrando que para authenticar o login antes devera selecionar a base de dados para autenticação, por exemplo `use admin` e logo em seguida o comando para autentica
 #### `db.auth("UserName", "Pass")`
 ---
-#### 5. Criando uma *Database*
+#### 6. Criando uma *Database*
 ```js
 use nomedb
 db.nomedb.insert({nome: "Ada Lovelace", idade: 205})
