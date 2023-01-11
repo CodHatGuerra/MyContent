@@ -2,8 +2,8 @@
  #### Siga o passo a passo descrito no site, de preferencia utilizar o Script [rabbitmq.com](https://www.rabbitmq.com/install-debian.html#apt-cloudsmith) utilizar repositorio Cloudsmith Quick start Script.
 ---
 #### Comandos adicionais no qual é util após a instalação do Servidor.
-#### - `sudo rabbitmp-diagnostics server_version` Verificar a versão do RabbitMQ 
-#### - `systemctl status rabbitm-server` Verifica o serviço do servidor na maquina
+#### - `sudo rabbitmq-diagnostics server_version` Verificar a versão do RabbitMQ 
+#### - `systemctl status rabbitmq-server` Verifica o serviço do servidor na maquina
 ---
 #### Comandos Para Ativar o Plugin Manager HTTP
 #### - `sudo rabbitmq-plugins enable rabbitmq_management`
