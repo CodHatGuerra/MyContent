@@ -17,3 +17,6 @@
 #### Acesse http://localhost:15672/
 #### - Utilizando esta maneira voce podera logar com o usuario `guest` e senha `guest`
 #### - Caso acesse remotamente Troque o Localhost pelo ip Remoto no qual voce ira se conectar.
+---
+#### Ativando Ralocar o erro e tratar em uma fila
+#### - `rabbitmq-plugins enable rabbitmq_shovel rabbitmq_shovel_management`
