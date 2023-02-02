@@ -15,7 +15,7 @@ function getCountry(country1, country2, country3) {
     .catch((err) => console.log('Um Erro Inesperado: '+err))
 }//the throw statement will return the error to the catch method
 
-function clique() {
+function clique() { 
 getCountry('usa','brasil','germany')
 }
 
