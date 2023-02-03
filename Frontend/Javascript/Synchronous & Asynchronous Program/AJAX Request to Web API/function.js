@@ -3,8 +3,8 @@
     //1st step create an XMLHttpRequest object
     let xhr = new XMLHttpRequest();
 
-    //2nd step create the request
-    xhr.open('GET', 'https://restcountries.com/v3.1/name/'+countyName, true);
+    //2nd step create'https://restcountries.com/v3.1/name/' the request
+    xhr.open('GET', +countyName, true);
 
     //3rd. send the request
     xhr.send();
