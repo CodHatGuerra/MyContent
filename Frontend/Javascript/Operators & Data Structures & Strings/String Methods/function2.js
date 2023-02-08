@@ -46,8 +46,33 @@ let strReplace = greet.replace('.', '!')
 console.log(strReplace);
 
 //REPLACE ALL OCCURANCE let greet = 'Hey there. How are you doing today.';
-let strReplace1 = greet.replaceALL('.', '!')
+let strReplace1 = greet.replaceAll('.', '!')
 console.log(strReplace1);
 
-//17:25
-//https://www.youtube.com/watch?v=2tbkCy-D1LY&list=PL1BztTYDF-QPMwbOB-gRHM_vPKxDAJ-h0&index=14
+let str3 = greet.replace('Hey', 'Hello')
+console.log(str3);
+
+//includes(), startsWith(), endsWith(),  <-- this methods return boolean value, if caracter or string is preset.
+
+//includes() - RETURN TRUE IF A CHARACTER OR SUBSTRING IS PRESEN INSIDE A STRING
+console.log('---------INCLUDES()---------');
+console.log(greet.includes('Hey'));
+
+//startsWith() - RETURN TRUE IF A STRING STARTS WITH A GIVEN CHARACTER OR STRING
+console.log('------STARTSWITH()--------');
+console.log(greet.startsWith('Hey'));
+
+//endsWith() - RETURN TRUE IF A STRING ENDS WITH A GIVEN CHARACTER OR STRING
+console.log('------ENDSWITDH()-------');
+console.log(greet.endsWith('today.'));
+
+
+//USING STRING CONSTRUCTOR AND USE STRING METHODS WITH IT
+
+let strString = 'This is a string';
+let strString2 = new String('This is another string!');
+
+console.log(strString);// when a primitive string call an method, this primitive string is parsed to object string
+//and this is called of boxing, and after the value is returned from de method de string is converted to primitive again,
+//and this is called Unboxing
+console.log(strString2.replaceAll());
