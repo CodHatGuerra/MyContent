@@ -80,7 +80,12 @@ function printDetails(emp) {
     console.log(`${emp.name} is working from ${employeeLocation} office and he/she is a ${employeType}`);
 }
 
-
 printDetails(emp1)
 printDetails(emp2)
 printDetails(emp3)
+
+
+//REVERSE - REVERSES THE ORDER OF AN ELEMENT IN THE ARRAY
+console.log('------REVERSE()-------');
+let alphabet = ['a', 'b', 'c', 'd', 'e']
+console.log(alphabet.reverse());//ALSO UPDATE THE ORIGINALY ARRAY

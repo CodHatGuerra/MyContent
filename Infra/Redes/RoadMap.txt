@@ -1,0 +1,30 @@
+Here is a roadmap for learning about networks:
+
+    Fundamentals of networking: Start by learning about the basics of networking, including the OSI (Open Systems Interconnection) model, IP addresses, subnetting, and network protocols such as TCP/IP, UDP, and DNS.
+
+    Routing and switching: Study the principles of routing, including static and dynamic routing, and learn how to configure routers using routing protocols like OSPF and BGP. Also, learn about switching, VLANs, and Spanning Tree Protocol (STP).
+
+    Network security: Study the basics of network security, including firewalls, intrusion detection and prevention systems (IDS/IPS), and Virtual Private Networks (VPNs).
+
+    Wireless networks: Learn about wireless networking, including the different types of wireless networks (e.g., Wi-Fi, Zigbee, etc.), security protocols (e.g., WEP, WPA, WPA2), and how to set up and manage a wireless network.
+
+    Cloud networking: Study cloud networking and learn about the different types of cloud networking services (e.g., Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS)).
+
+    Network troubleshooting: Learn about network troubleshooting techniques and tools, such as ping, traceroute, and packet sniffing, and how to use them to diagnose and resolve network issues.
+
+    Advanced topics: Study advanced topics in networking, such as software-defined networking (SDN), network virtualization, and network automation.
+
+    Hands-on experience: Practice what you have learned by setting up a network laboratory and experiment with various networking scenarios. Join online forums and discussion groups to ask questions and share your knowledge with others.
+
+Note: To make the most of this roadmap, consider taking courses, reading books, and participating in hands-on lab exercises. Obtaining certifications, such as the Cisco Certified Network Associate (CCNA) or CompTIA Network+, can also be valuable in demonstrating your knowledge and expertise in the field.
+
+
+RB MKT - https://www.youtube.com/watch?v=zYSLFje9Ds8&list=PLD53z3_SAbssgcblXwxqXgaywLAN7y68h&index=3
+BOSON - https://www.youtube.com/watch?v=0wwXUdKdvKc&list=PLucm8g_ezqNpGh95n-OdEk06ity7YYfvU&index=10
+
+Gabriel torres - Redes de computadores
+Douglas Rocha - Redes de computadores: teoria e pratica
+William Stallings - Redes de sistemas de comunicação de dados
+ANDREW S.TANEBAUM - Redes de Computadores
+JAMES F. E KEITH ROSS - Redes de computadores e a internet
+

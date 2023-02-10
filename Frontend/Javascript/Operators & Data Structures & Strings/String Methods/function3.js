@@ -40,8 +40,35 @@ function formatName(fullName) {
     jointName = storedName.join(' ')
     return jointName;
 }
-
 console.log(formatName('gabriel FERNADO dos santos guerra'));
 
-//17:18
-//https://www.youtube.com/watch?v=MiDIPhfSwC8&list=PL1BztTYDF-QPMwbOB-gRHM_vPKxDAJ-h0&index=15&ab_channel=Errichto
+
+
+//PADDING METHODS - padStart() & padEnd()
+//PADDING METHODS ADD A NUMBER OF CHARACTER TO A STRING UNTIL
+//THE STRING HAS A CERTAIN DESIRED LENGTH
+console.log('------PADSTART()--------');
+console.log(myString.length);
+console.log(myString.padStart(30, '*'));//FIRST ARGUMENT IS DESIRE LENGHT,
+console.log(myString.padEnd(30, '*'));//THE SECCOND ARGUMENT IS THE CHARACTER YOU WANT TO COMPLETY
+
+//USE CASE MASK THE C REDIT/DEBIT CARD DETAILS
+console.log('------USE CASE------');
+function maskNumber(fullNumber) {
+    let maskedNumber = fullNumber.slice(11).padStart(15 ,'*** ')
+    return maskedNumber
+}
+
+console.log(maskNumber('123 456 789 101'));
+console.log(maskNumber('234 906 228 711'));
+
+//REPEAT - REPEATS A STRING FOR A GIVEN NUMBER OF TIMES
+console.log('------REPEATS()-------');
+console.log('Hello'.repeat(5));
+
+//CONCAT - CONCATENATES TWO STRINGS
+console.log('----CONCAT()------');
+let concat1 = 'Hello';
+let concat2 = 'World';
+let concatened = concat1.concat(concat2);
+console.log(concatened);
