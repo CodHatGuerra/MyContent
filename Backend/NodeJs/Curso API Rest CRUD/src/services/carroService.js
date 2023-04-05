@@ -1,5 +1,17 @@
-const db = require("../db")
+const db = require("../db");
 
-module.exports = ({
-
-})
+module.exports = {
+  buscarTodos: () => {
+    return new Promise((aceito, rejeitado) => {
+      db.query("SELECT * FROM carros", (error, results) => {
+        if (error) {
+          rejeitado(error);
+          return;
+        } else {
+          aceito(results);
+          return;
+        }
+      });
+    });
+  },
+};

@@ -1,5 +1,8 @@
-const express = require('express');
-const routes = express.Router();
-const carroController = require("./controllers/carroController");
+const express = require("express");
+const router = express.Router();
 
-module.exports = routes;
+const CarroController = require("./controllers/CarroController");
+
+router.get("/carros", CarroController.buscarTodos);
+
+module.exports = router;
