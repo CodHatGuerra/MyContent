@@ -46,4 +46,35 @@ module.exports = {
       );
     });
   },
+
+  alterar: (codigo, modelo, placa) => {
+    return new Promise((aceito, rejeitado) => {
+      db.query("UPDATE carros SET modelo = ?, placa = ? WHERE codigo = ?" , [modelo, placa, codigo] , (error, results) => {
+          if (error) {
+            rejeitado(error);
+            return;
+          }
+          aceito(results);
+        }
+      );
+    });
+  },
+
+  deletar: (codigo) => {
+    return new Promise((aceito, rejeitado) => {
+      db.query("DELETE FROM carros WHERE codigo = ?",[codigo],(error, results) => {
+          if (error) {
+            rejeitado(error);
+            return;
+          }
+          if (results.length > 0) {
+            aceito(results[0]);
+            return;
+          } else {
+            aceito(false);
+          }
+        }
+      );
+    });
+  },
 };

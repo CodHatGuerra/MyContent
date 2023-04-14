@@ -48,8 +48,46 @@ module.exports = {
         placa,
       };
     } else {
-      json.error = 'Campos não Enviados'
+      json.error = "Campos não Enviados";
     }
+    res.json(json);
+  },
+
+  alterar: async (req, res) => {
+    let json = { error: "", result: {} };
+
+    let codigo = req.params.codigo;
+    let modelo = req.body.modelo;
+    let placa = req.body.placa;
+
+    if (codigo && modelo && placa) {
+      let CarroCodigo = await CarroService.alterar(codigo, modelo, placa);
+      json.result = {
+        codigo,
+        modelo,
+        placa,
+      };
+    } else {
+      json.error = "Campos não Enviados";
+    }
+    res.json(json);
+  },
+
+  deletar: async (req, res) => {
+    let json = { error: "", result: {} };
+
+    let codigo = req.params.codigo;
+
+    let carro = await CarroService.deletar(codigo);
+
+    if (carro) {
+      json.result = {
+        codigo: carro.codigo,
+        modelo: carro.modelo,
+        placa: carro.placa,
+      };
+    }
+
     res.json(json);
   },
 };
