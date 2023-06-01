@@ -13,7 +13,7 @@ mongodump --db "NomeBanco"
 ### Comando para Restaurar a base de dados
 
 ```js
-mongorestore --authenticationDatabase admin --username Admin --password 123456 --db "nome" --dir user.bson
+mongorestore --authenticationDatabase admin --username Admin --password 123456 --db "nome" --dir delivery_prd/
 ```
 
 ### Exemplo restaurando uma base de dados com arquivos locais para nuvem
