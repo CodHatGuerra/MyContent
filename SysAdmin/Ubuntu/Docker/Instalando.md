@@ -64,15 +64,20 @@ docker run hello-world
  apt  install docker-compose
  sudo apt-get install docker-compose-plugin
 ```
-___
-#### O Docker Compose é uma ferramenta que permite definir e executar aplicativos multi-container usando o Docker. Ele é usado para gerenciar a configuração e a orquestração de vários contêineres Docker como uma unidade coesa.
 
-#### O Docker Compose utiliza arquivos de definição YAML para descrever a configuração do aplicativo e as dependências entre os contêineres. Com esses arquivos, você pode definir os serviços, redes, volumes e outras configurações necessárias para o funcionamento do aplicativo.
+---
 
-#### A principal vantagem do Docker Compose é que ele simplifica a implantação e a execução de aplicativos que consistem em vários componentes ou microserviços. Ele permite definir as imagens do Docker a serem usadas, as portas que serão expostas, as variáveis de ambiente, os volumes de dados compartilhados e muito mais.
+#### Alguns problemas sobre WSL :
 
-#### Com o Docker Compose, você pode iniciar todos os contêineres de uma aplicação com um único comando e também pode pará-los e removê-los facilmente. Isso torna o processo de desenvolvimento, teste e implantação de aplicativos mais rápido e eficiente, pois você pode definir facilmente um ambiente consistente para o desenvolvimento e implantação.
+```
+PS C:\Windows\system32> wsl.exe -l -v
+Windows Subsystem for Linux has no installed distributions.
 
-#### Além disso, o Docker Compose permite que você defina redes personalizadas para seus contêineres e os conecte entre si. Isso facilita a comunicação e o compartilhamento de recursos entre os serviços.
+Use 'wsl.exe --list --online' to list available distributions
+and 'wsl.exe --install ' to install.
 
-#### Em resumo, o Docker Compose é uma ferramenta poderosa para orquestração de contêineres Docker, permitindo que você defina e execute aplicativos complexos com facilidade, simplificando o processo de desenvolvimento e implantação de aplicativos distribuídos.
+Distributions can also be installed by visiting the Microsoft Store:
+https://aka.ms/wslstore
+Error code: Wsl/WSL_E_DEFAULT_DISTRO_NOT_FOUND
+PS C:\Windows\system32>
+```
