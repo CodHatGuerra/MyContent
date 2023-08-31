@@ -70,14 +70,19 @@ docker run hello-world
 #### Alguns problemas sobre WSL :
 
 ```
-PS C:\Windows\system32> wsl.exe -l -v
-Windows Subsystem for Linux has no installed distributions.
+I have so far only been able to restart Docker Desktop when I do the following:
 
-Use 'wsl.exe --list --online' to list available distributions
-and 'wsl.exe --install ' to install.
+Access “Turn Windows Features On/Off” and set
 
-Distributions can also be installed by visiting the Microsoft Store:
-https://aka.ms/wslstore
-Error code: Wsl/WSL_E_DEFAULT_DISTRO_NOT_FOUND
-PS C:\Windows\system32>
+    Virtual Machine Platform OFF
+    Windows Hypervisor Platform ON
+    Windows Subsystem for Linux ON
+    Hyper-V OFF
+
+My WSL Status now shows:
+PS C:\Windows\system32> wsl --status
+Default Distribution: docker-desktop-data
+Default Version: 2
+
+I will keep exploring to find what causes or affects this, but I have restarted once, and Docker Desktop loaded successfully again. I'll post more info if it breaks again...
 ```
