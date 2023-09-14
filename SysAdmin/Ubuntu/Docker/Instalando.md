@@ -85,4 +85,16 @@ Default Distribution: docker-desktop-data
 Default Version: 2
 
 I will keep exploring to find what causes or affects this, but I have restarted once, and Docker Desktop loaded successfully again. I'll post more info if it breaks again...
+
+
+INSTALANDO DISTRIBUIÇÂO LINUX NO WINDOWS
+
+1-
+wsl --set-default-version 1
+
+2-
+wsl.exe --install Ubuntu
+
+3-
+wsl --set-default-version 2
 ```
