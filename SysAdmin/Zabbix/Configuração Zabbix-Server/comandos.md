@@ -21,3 +21,9 @@
 - ### para monitorar os recuros vá em monitoring > hosts
 
 - ### após conseguir monitorar os dados do host ja está pronto para prosseguir com a instalação do Grafana.
+
+
+### Link para Tempaltes da comunidade >>>
+* ### [Zabbix Comunity](https://github.com/zabbix/community-templates)
+* ### [Zabbix-Search](https://monitoringartist.github.io/zabbix-searcher/)
+* ### [Zabbix-OFC](https://www.zabbix.com/integrations)
